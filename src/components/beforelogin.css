@@ -1,0 +1,195 @@
+.Before_Login_Navbar {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    padding: 2%;
+    justify-content: space-between;
+}
+
+.Before_Login_Sections {
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Before_Login_Sections button {
+    background: rgb(81, 76, 76);
+    background: linear-gradient(90deg,
+            rgba(81, 76, 76, 1) 0%,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(124, 117, 123, 1) 100%);
+    color: white;
+    border: none;
+    padding: 0% 4% 0% 4%;
+    border-radius: 10px;
+    transition: all ease-in-out 100ms;
+}
+
+.Before_Login_Sections button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.Before_Login_Footer_Container {
+    padding: 7%;
+    background-color: black;
+    color: white;
+}
+
+.Before_Login_Footer_Container>button {
+    margin-left: 41.5%;
+}
+
+.Before_Login_Footer_Container>button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.Before_Login_Footer_Container button {
+    color: white;
+    background-color: rgb(17, 16, 16);
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 12px;
+    opacity: 0.8;
+    padding: 0.5% 3% 0.5% 3%;
+}
+
+.Before_Login_Footer_Container_First_Div {
+    width: 80%;
+    margin: auto;
+    padding: 7%;
+    border-radius: 50px;
+    background-color: rgb(17, 16, 16);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.Before_Login_Footer_Container_First_Div a {
+    color: white;
+    text-decoration: none;
+    font-size: x-small;
+    display: grid;
+    gap: 12px;
+}
+
+.Before_Login_Footer_Container_First_Div a:hover {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.Before_Login_Footer_Container_Mid_Line {
+    width: 0px;
+    border: 1px solid white;
+}
+
+.Before_Login_Footer_Container_Content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+}
+
+.Before_Login_Social_Icons {
+    display: none;
+}
+
+.Before_Login_Footer_End_line {
+    width: 45%;
+    border: 1px solid white;
+    height: 0;
+    margin-top: 2%;
+}
+
+.Before_Login_Footer_Copyright {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Before_Login_Footer_Copyright>h3 {
+    width: 40%;
+    padding-left: 2%;
+    font-size: small;
+}
+
+.Before_Login_Social_Icons_Last {
+    width: 30%;
+    padding-right: 2%;
+    padding-left: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 900px) {
+    .Before_Login_Navbar {
+        height: 30px;
+    }
+
+    .Before_Login_Sections {
+        width: 60%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Before_Login_Sections {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .Before_Login_Sections button {
+        font-size: 10px;
+    }
+
+    .Before_Login_Social_Icons {
+        display: block;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .Before_Login_Footer_Container_First_Div {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 5%;
+    }
+
+    .Before_Login_Footer_Container>button {
+        width: 50%;
+        margin-left: 26%;
+        margin-bottom: 5%;
+        padding: 1.5% 5% 1.5% 5%;
+    }
+
+    .Before_Login_Footer_Container_Mid_Line {
+        display: none;
+    }
+
+    .Before_Login_Footer_Copyright>h3 {
+        width: 250%;
+        font-size: 1px;
+        text-align: center;
+    }
+
+    .Before_Login_Footer_Copyright {
+        margin-top: 5%;
+    }
+
+    .Before_Login_Social_Icons_Last {
+        display: none;
+    }
+
+    .Before_Login_Footer_End_line {
+        display: none;
+    }
+}

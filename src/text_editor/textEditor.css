@@ -1,0 +1,38 @@
+.text__editor__background{
+        background: rgb(97, 25, 132);
+        background: linear-gradient(90deg, rgba(97, 25, 132, 1) 0%, rgba(220, 38, 72, 1) 47%, rgba(220, 38, 72, 1) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+}
+.text__editor__box{
+    width: 80%;
+    margin-right: 2%;
+}
+.text__editor__input{
+background: linear-gradient(90deg, rgba(254, 254, 254, 0.56) -3.22%, rgba(255, 255, 255, 0.16) 95.7%);
+    backdrop-filter: blur(25px);
+}
+.text__editor__button__box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text__editor__button{
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        margin: 15px;
+        text-decoration: none;
+        border-radius: 28px;
+}
+.text__editor__image__uplader__box{
+    margin-bottom:2rem;
+}
+@media only screen and (max-width: 768px) {
+    .text__editor__box{
+        width: 90%;
+    }
+    .text__editor__background{
+        align-items: center;
+    }
+}

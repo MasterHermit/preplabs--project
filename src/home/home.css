@@ -1,0 +1,5 @@
+.home__background{
+    width: 100%;
+    background: rgb(97, 25, 132);
+    background: linear-gradient(90deg, rgba(97, 25, 132, 1) 0%, rgba(220, 38, 72, 1) 47%, rgba(220, 38, 72, 1) 100%);
+}

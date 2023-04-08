@@ -1,0 +1,138 @@
+ .background{
+     height: 100vh;
+     background: rgb(97, 25, 132);
+     background: linear-gradient(90deg, rgba(97, 25, 132, 1) 0%, rgba(220, 38, 72, 1) 47%, rgba(220, 38, 72, 1) 100%);
+     display: flex;
+     justify-content: center;
+     align-items: center;   
+ }
+ .background>*{
+        background: linear-gradient(90deg, rgba(97, 25, 132, 1) 0%, rgba(220, 38, 72, 1) 47%, rgba(220, 38, 72, 1) 100%);
+ }
+.user__profile__background__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(8px);  
+    border-radius: 2rem; 
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.user__profile__background__card__contents{
+ width: 100%;
+}
+.user__profile__background__card__buttons{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+} 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-top:20px;
+}
+.form-header{
+    margin:2rem;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    color:white;
+}
+.form-cancel{
+    cursor: pointer;
+    color:black;
+    font-weight:bold;
+}
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin:0 20px 20px;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 45%
+}
+.form-column-ua {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: calc(100% - 10px);
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color:#ffffff;
+}
+
+.long-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+.small-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 70%;
+}
+
+.user__profile__background__card__button {
+    background-color: black;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    margin: 15px;
+    text-decoration: none;
+    border-radius: 28px;
+}
+
+@media only screen and(min-width: 992px) {
+    .background{
+        height:100vh;
+    }
+}
+@media only screen and (max-width: 768px){
+    .background {
+            height: auto;
+        }
+    .user__profile__background__card {
+        margin: 5% 0 5%;
+    }
+   .form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-top: 20px;      
+   }
+   .form-row{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    width: 100%;
+    margin: 0 20px 20px;
+   }
+   .form-column{
+    width: 100%;
+   }
+   .small-input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 80%;
+   }
+}

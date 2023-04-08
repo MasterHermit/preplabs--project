@@ -17,7 +17,7 @@ const images = [
 export default function App() {
     return (
         <div>
-            <LargeLoader />
+            <TextEditor />
         </div>
     )
 }

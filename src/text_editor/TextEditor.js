@@ -81,12 +81,27 @@ export default function TextEditor() {
             return;
         }
         console.log(postData, images);
-        setPostData({
-            title: "",
-            description: "",
-            category: "",
-        });
-        setIsLoading(false);
+
+        fetch('http://localhost:8000/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postData),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                setPostData({
+                    title: "",
+                    description: "",
+                    category: "",
+                })
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
     };
 
     return (

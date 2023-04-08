@@ -1,0 +1,11 @@
+{
+  "posts": [
+    {
+      "title": "first post",
+      "description": "Hope it will be successfully posted to the post.json",
+      "category": "option2",
+      "id": 1
+    }
+   
+  ]
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Flex } from "@chakra-ui/react";
+import "./jobSection.css"
 
 
 //components
@@ -46,7 +47,8 @@ const JobSection = () => {
             bg="skyblue"
             flexDirection={{ base: "column", md: "row" }}
         >
-            <Box width={{ base: "100%", md: "30%" }} overflowY="scroll">
+        {/* to apply scroll in chakra we have to assign maxHeight Property */}
+            <Box width={{ base: "100%", md: "30%" }} maxHeight="100vh" overflowY="scroll">
                 <Flex flexDirection="column">
                     <Box marginTop="4">
                         {/* Render job cards here */}
@@ -54,12 +56,9 @@ const JobSection = () => {
                             <JobCard key={job.id} job={job} onClick={() => handleJobCardClick(job)} />
                         ))}
                     </Box>
-                    <Box marginTop="4">
-                        {/* Add pagination here */}
-                    </Box>
                 </Flex>
             </Box>
-            <Box width={{ base: "100%", md: "70%" }}>
+            <Box width={{ base: "100%", md: "70%" }} maxHeight="100vh" overflowY="scroll">
                 {selectedJob &&
                     <JobDetails job={selectedJob} />
                 }

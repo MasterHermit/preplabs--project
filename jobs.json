@@ -18,10 +18,10 @@
         },
         {
             "id": 2,
-            "title": "React Developer",
-            "company": "ABC Inc.",
-            "location": "New York",
-            "type": "On-site",
+            "title": "Angular Developer",
+            "company": "XYZ Inc.",
+            "location": "Mumbai",
+            "type": "Remote",
             "skills": [
                 "React",
                 "Angular",
@@ -34,9 +34,9 @@
         },
         {
             "id": 3,
-            "title": "React Developer",
-            "company": "ABC Inc.",
-            "location": "New York",
+            "title": "Web Developer",
+            "company": "LKJ Inc.",
+            "location": "London UK",
             "type": "On-site",
             "skills": [
                 "React",

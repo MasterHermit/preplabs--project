@@ -1,0 +1,84 @@
+{
+    "jobs": [
+        {
+            "id": 1,
+            "title": "React Developer",
+            "company": "ABC Inc.",
+            "location": "New York",
+            "type": "On-site",
+            "skills": [
+                "React",
+                "Angular",
+                "Vue",
+                "Java",
+                "Python"
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "requirements": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id": 2,
+            "title": "React Developer",
+            "company": "ABC Inc.",
+            "location": "New York",
+            "type": "On-site",
+            "skills": [
+                "React",
+                "Angular",
+                "Vue",
+                "Java",
+                "Python"
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "requirements": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id": 3,
+            "title": "React Developer",
+            "company": "ABC Inc.",
+            "location": "New York",
+            "type": "On-site",
+            "skills": [
+                "React",
+                "Angular",
+                "Vue",
+                "Java",
+                "Python"
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "requirements": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id": 4,
+            "title": "React Developer",
+            "company": "ABC Inc.",
+            "location": "New York",
+            "type": "On-site",
+            "skills": [
+                "React",
+                "Angular",
+                "Vue",
+                "Java",
+                "Python"
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "requirements": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id": 5,
+            "title": "React Developer",
+            "company": "ABC Inc.",
+            "location": "New York",
+            "type": "On-site",
+            "skills": [
+                "React",
+                "Angular",
+                "Vue",
+                "Java",
+                "Python"
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "requirements": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+    ]
+}

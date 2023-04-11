@@ -55,6 +55,18 @@ const JobSection = () => {
     const handleFilterChange = (event) => {
         // Implement filter functionality here
     };
+    const css = {
+        "&::-webkit-scrollbar": {
+            width: "8px",
+            borderRadius: "8px",
+            backgroundColor: "black",
+        },
+        "&::-webkit-scrollbar-thumb": {
+            borderRadius: "8px",
+            backgroundColor: "white",
+        },
+    }
+
 
     return (
         <>
@@ -68,17 +80,7 @@ const JobSection = () => {
                     width={{ base: "100%", md: "30%" }}
                     maxHeight="100vh"
                     overflowY="scroll"
-                    css={{
-                        "&::-webkit-scrollbar": {
-                            width: "8px",
-                            borderRadius: "8px",
-                            backgroundColor: "white",
-                        },
-                        "&::-webkit-scrollbar-thumb": {
-                            borderRadius: "8px",
-                            backgroundColor: "white",
-                        },
-                    }}
+                    css={css}
                 >
                     <Flex flexDirection="column">
                         <Box marginTop="4">
@@ -89,7 +91,7 @@ const JobSection = () => {
                         </Box>
                     </Flex>
                 </Box>
-                <Box width={{ base: "100%", md: "70%" }} maxHeight="100vh" overflowY="auto">
+                <Box width={{ base: "100%", md: "70%" }} maxHeight="100vh" overflowY="scroll" css={css}>
                     {selectedJob && <JobDetails job={selectedJob} />}
                 </Box>
             </Flex>

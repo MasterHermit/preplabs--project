@@ -24,7 +24,7 @@ const MobileViewJobSection = () => {
     const displayedSkills = showAllSkills ? job.skills : job.skills.slice(0, 3);
     const hiddenSkillsCount = job.skills.length - displayedSkills.length;
     return (
-        <Box bg="skyblue" padding="4">
+        <Box bg="blackAlpha.600" padding="4">
             <Text fontSize="xl" fontWeight="bold">
                 {job.title}
             </Text>

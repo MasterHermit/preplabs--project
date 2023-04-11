@@ -45,7 +45,7 @@ const JobDetails = ({ job }) => {
                     <Text color="white" key={skill}>{skill}</Text>
                 ))}
                 {hiddenSkillsCount > 0 && (
-                    <Button color="white" variant="link" onClick={toggleShowAll}>
+                    <Button variant="link" color="white !important" textDecoration="none" onClick={toggleShowAll}>
                         {showAllSkills ? "Show less" : `+ ${hiddenSkillsCount} more`}
                     </Button>
                 )}
@@ -53,12 +53,16 @@ const JobDetails = ({ job }) => {
             <Flex m="4">
                 <Button
                     m="4"
+                    p="4"
+                    w="8rem"
                     bg="black"
                     color="white"
                     borderRadius="28px"
                 >Easy Apply</Button>
                 <Button
                     m="4"
+                    p="4"
+                    w="8rem"
                     bg="black"
                     color="white"
                     borderRadius="28px"

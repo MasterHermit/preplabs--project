@@ -1,5 +1,5 @@
-import { useState,useEffect } from 'react';
-import { Box, Select } from '@chakra-ui/react';
+import { useState, useEffect } from 'react';
+import { Box, Select, Text } from '@chakra-ui/react';
 
 function JobDropdowns() {
     const [selectedItems, setSelectedItems] = useState(
@@ -13,20 +13,21 @@ function JobDropdowns() {
 
     const handleOnChange = (e) => {
         const { name, value } = e.target
-        setSelectedItems(prevValue => ({ ...prevValue, [name]: value })) 
+        setSelectedItems(prevValue => ({ ...prevValue, [name]: value }))
     }
 
     //useEffect will take all the parameters of selectedItems so page will re render if a value changes
     //however don't put the whole object as selectedItems to avoid re rendering of page in refresh also
-    useEffect(()=>{ 
-         //api call for data with selected options 
+    useEffect(() => {
+        //api call for data with selected options 
         console.log(selectedItems);
-    },[selectedItems.jobType,selectedItems.expLevel,selectedItems.company,selectedItems.location])
-    
-
+    }, [selectedItems.jobType, selectedItems.expLevel, selectedItems.company, selectedItems.location])
 
     return (
+        //Tasks to-do 
         //while putting in original section remove bg from main box 
+        //style the dropdown options and add a hover 
+
         <Box
             display="flex"
             justifyContent="left"
@@ -34,7 +35,7 @@ function JobDropdowns() {
         >
             {/* First Dropdown */}
             <Box
-                alignContent="center" ml="4" w="20%">
+                alignContent="center" ml="4" w="15%">
                 <Select
                     borderRadius="2xl"
                     sx={{
@@ -53,7 +54,7 @@ function JobDropdowns() {
                 </Select>
             </Box>
             {/* Second Dropdown */}
-            <Box alignContent="center" ml="4" w="20%">
+            <Box alignContent="center" ml="4" w="15%">
                 <Select
                     borderRadius="2xl"
                     sx={{
@@ -73,7 +74,7 @@ function JobDropdowns() {
             </Box>
 
             {/* Third Dropdown */}
-            <Box alignContent="center" ml="4" w="20%">
+            <Box alignContent="center" ml="4" w="15%">
                 <Select
                     borderRadius="2xl"
                     sx={{
@@ -93,7 +94,7 @@ function JobDropdowns() {
             </Box>
 
             {/* Fourth Dropdown */}
-            <Box alignContent="center" ml="4" w="20%">
+            <Box alignContent="center" ml="4" w="15%">
                 <Select
                     borderRadius="2xl"
                     sx={{
@@ -110,6 +111,7 @@ function JobDropdowns() {
                     <option style={{ color: "black" }} value="los-angeles">Remote</option>
                     <option style={{ color: "black" }} value="chicago">Hybrid</option>
                 </Select>
+
             </Box>
         </Box>
     );

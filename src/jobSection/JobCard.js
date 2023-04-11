@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Text, Image} from "@chakra-ui/react";
+import { Box, Flex, Text, Image } from "@chakra-ui/react";
 
 
 const JobCard = ({ job, onClick }) => {
@@ -20,8 +20,9 @@ const JobCard = ({ job, onClick }) => {
                     <Text fontSize="xl" fontWeight="bold">
                         {job.title}
                     </Text>
-                    <Text >{job.company}</Text>
-                    <Text>{job.location} ({job.type})</Text>
+                    <Text color="white" >{job.company}</Text>
+                    <Text color="white">{job.location} ({job.type})</Text>
+                    <Text color="white" >2 Days ago</Text>
                 </Box>
             </Flex>
         </Box>

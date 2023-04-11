@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Box, Flex, Text, HStack, Button, UnorderedList, ListItem } from "@chakra-ui/react";
 
 //components
@@ -12,8 +13,10 @@ import { AiOutlineUnorderedList } from "react-icons/ai"
 
 
 
-const JobDetails = ({ job }) => {
-
+const MobileViewJobSection = () => {
+    const location = useLocation();
+    const { job } = location.state;
+    console.log(job);
     const [showAllSkills, setShowAllSkills] = useState(false);
     const toggleShowAll = () => {
         setShowAllSkills((prevShowAllSkills) => !prevShowAllSkills);
@@ -21,7 +24,7 @@ const JobDetails = ({ job }) => {
     const displayedSkills = showAllSkills ? job.skills : job.skills.slice(0, 3);
     const hiddenSkillsCount = job.skills.length - displayedSkills.length;
     return (
-        <Box padding="4" margin="3">
+        <Box bg="skyblue" padding="4">
             <Text fontSize="xl" fontWeight="bold">
                 {job.title}
             </Text>
@@ -97,4 +100,4 @@ const JobDetails = ({ job }) => {
     );
 };
 
-export default JobDetails;
+export default MobileViewJobSection;

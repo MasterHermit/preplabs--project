@@ -69,6 +69,8 @@ const JobSection = () => {
 
 
     return (
+        //tasks to-do
+        //go to JobDropdowns and fix dropdowns in mobile view
         <>
             <JobDropdowns />
             <Flex

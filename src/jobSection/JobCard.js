@@ -5,7 +5,7 @@ import { Box, Flex, Text, Image } from "@chakra-ui/react";
 const JobCard = ({ job, onClick }) => {
     return (
         //tasks to-do
-        //remove the default margins added by chakra to the Text field
+        
         <Box
             borderWidth="1px"
             borderRadius="lg"

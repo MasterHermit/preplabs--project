@@ -79,6 +79,38 @@
             ],
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             "requirements": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id": 6,
+            "title": "React Developer",
+            "company": "ABC Inc.",
+            "location": "New York",
+            "type": "On-site",
+            "skills": [
+                "React",
+                "Angular",
+                "Vue",
+                "Java",
+                "Python"
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "requirements": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id": 7,
+            "title": "React Developer",
+            "company": "ABC Inc.",
+            "location": "New York",
+            "type": "On-site",
+            "skills": [
+                "React",
+                "Angular",
+                "Vue",
+                "Java",
+                "Python"
+            ],
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "requirements": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         }
     ]
 }

@@ -46,6 +46,7 @@ function CourseDetails() {
         // add more lectures here
     ];
     return (
+        //if you already have a parent div to put the component then remmove the first box
         <Box bg="blackAlpha.600" minW="100vw" minH="100vh" >
             <Box mx="8" py="8">
                 <Flex justify="space-between">

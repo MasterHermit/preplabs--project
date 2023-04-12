@@ -11,19 +11,19 @@ const LectureAccordion = ({ lectures }) => {
                     <h2>
                         <AccordionButton onClick={() => setIsOpen(!isOpen)}>
                             <Box flex="1" textAlign="left">
-                                <Text fontWeight="bold">{lecture.name}</Text>
+                                <Text color="white" fontWeight="bold">{lecture.name}</Text>
                             </Box>
                             <Flex alignItems="center">
-                                <Text fontSize="sm" mr={2}>{lecture.duration}</Text>
-                                <Icon as={isOpen ? GoChevronUp : GoChevronDown} />
+                                <Text color="white" fontSize="sm" mr={2}>{lecture.duration}</Text>
+                                <Icon color="white" as={isOpen ? GoChevronUp : GoChevronDown} />
                             </Flex>
                         </AccordionButton>
                     </h2>
                     <AccordionPanel>
                         {lecture.topics.map((topic, index) => (
                             <Flex justifyContent="space-between" key={index} ml={4}>
-                                <Text>{topic.name}</Text>
-                                <Text fontSize="sm">{topic.duration}</Text>
+                                <Text color="white">{topic.name}</Text>
+                                <Text fontSize="sm" color="white">{topic.duration}</Text>
                             </Flex>
                         ))}
                     </AccordionPanel>

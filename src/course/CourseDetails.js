@@ -7,6 +7,7 @@ import { GrLanguage } from "react-icons/gr"
 import { AiOutlineVideoCamera, AiOutlineTrophy } from "react-icons/ai"
 import { FaFileDownload } from "react-icons/fa"
 import { BiNote } from "react-icons/bi"
+import { MdOutlineLanguage } from "react-icons/md"
 
 //components
 import CourseCard from "./CourseCard";
@@ -43,11 +44,58 @@ function CourseDetails() {
                 { name: "Custom Hooks", duration: "15 minutes" }
             ]
         },
+        {
+            name: "React Router",
+            duration: "30 minutes",
+            topics: [
+                { name: "Routing basics", duration: "10 minutes" },
+                { name: "Route parameters", duration: "10 minutes" },
+                { name: "Nested routes", duration: "10 minutes" }
+            ]
+        },
+        {
+            name: "React Native",
+            duration: "1 hour 30 minutes",
+            topics: [
+                { name: "Introduction to React Native", duration: "10 minutes" },
+                { name: "Creating a new project", duration: "15 minutes" },
+                { name: "Components and styling", duration: "30 minutes" },
+                { name: "Navigation in React Native", duration: "20 minutes" },
+                { name: "Using APIs in React Native", duration: "15 minutes" }
+            ]
+        },
+        {
+            name: "Server-side rendering with React",
+            duration: "45 minutes",
+            topics: [
+                { name: "Introduction to server-side rendering", duration: "10 minutes" },
+                { name: "Setting up a server-side rendering project", duration: "15 minutes" },
+                { name: "Server-side rendering with React", duration: "20 minutes" }
+            ]
+        },
+        {
+            name: "React Performance",
+            duration: "1 hour",
+            topics: [
+                { name: "Optimizing React components", duration: "20 minutes" },
+                { name: "Using shouldComponentUpdate", duration: "15 minutes" },
+                { name: "React memoization", duration: "15 minutes" },
+                { name: "Using React DevTools to improve performance", duration: "10 minutes" }
+            ]
+        }
         // add more lectures here
     ];
+    const course = {
+        thumbnail: "https://images.unsplash.com/photo-1613677135043-a2512fbf49fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHl0aG9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        title: "Introduction to React",
+        price: 49.99,
+    };
+
     return (
         //if you already have a parent div to put the component then remmove the first box
-        <Box bg="blackAlpha.600" minW="100vw" minH="100vh" >
+        <Box
+            bgGradient="linear(to-b, #000000, #beb99e)"
+        >
             <Box mx="8" py="8">
                 <Flex justify="space-between">
                     <Box w="75%">
@@ -62,13 +110,13 @@ function CourseDetails() {
                         <Text color="white">Created by Saistupa</Text>
                         <Flex mb="12">
                             <HStack mr="12">
-                                <TbSettings2 size="1.5rem" />
+                                <TbSettings2 color="white" size="1.5rem" />
                                 <Text color="white">
                                     Last updated 9/2019
                                 </Text>
                             </HStack>
                             <HStack>
-                                <GrLanguage size="1.5rem" />
+                                <MdOutlineLanguage color="white" size="1.5rem" />
                                 <Text color="white">English</Text>
                             </HStack>
                         </Flex>
@@ -113,7 +161,7 @@ function CourseDetails() {
                         </Grid>
                     </Box>
                     <Box w="25%">
-                        <CourseCard />
+                        <CourseCard thumbnail={course.thumbnail} title={course.title} price={course.price} />
                     </Box>
                 </Flex>
                 <Box mt="8">

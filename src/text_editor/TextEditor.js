@@ -32,7 +32,9 @@ export default function TextEditor() {
     const handleImageUpload = async (event) => {
         setIsLoading(true);
         const file = event.target.files[0];
-
+        //Tasks to-do
+        //check if it is a valid image file or not
+        //dissolve the error appearing if you cancel instead of selecting a image
         try {
             const newImage = { file };
             setImages((prevImages) => [...prevImages, newImage]);
@@ -176,7 +178,7 @@ export default function TextEditor() {
                                 )}
                             </Button>
                         </label>
-                        {images.map((image, index) => (
+                        {images.length < 1 ? "" : images.map((image, index) => (
                             <Box w="15%" h="15%" key={index} position="relative" ml={2}>
                                 <CloseButton
                                     size="md"

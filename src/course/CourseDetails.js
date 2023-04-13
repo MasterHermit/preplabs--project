@@ -1,13 +1,14 @@
 //chakra ui components
-import { Box, Flex, Heading, Text, Button, HStack, Grid } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Button, HStack, Grid, Avatar } from "@chakra-ui/react";
 
 //icons
 import { TbSettings2 } from "react-icons/tb"
-import { GrLanguage } from "react-icons/gr"
-import { AiOutlineVideoCamera, AiOutlineTrophy } from "react-icons/ai"
+import { AiOutlineVideoCamera, AiOutlineTrophy, AiOutlineStar } from "react-icons/ai"
 import { FaFileDownload } from "react-icons/fa"
-import { BiNote } from "react-icons/bi"
+import { BiNote, BiDoughnutChart } from "react-icons/bi"
 import { MdOutlineLanguage } from "react-icons/md"
+import { SlBadge } from "react-icons/sl"
+import { BsFillPlayFill } from "react-icons/bs"
 
 //components
 import CourseCard from "./CourseCard";
@@ -92,6 +93,8 @@ function CourseDetails() {
     };
 
     return (
+        //tasks to-do
+        //make mobile resonsive
         //if you already have a parent div to put the component then remmove the first box
         <Box
             bgGradient="linear(to-b, #000000, #beb99e)"
@@ -164,10 +167,63 @@ function CourseDetails() {
                         <CourseCard thumbnail={course.thumbnail} title={course.title} price={course.price} />
                     </Box>
                 </Flex>
-                <Box mt="8">
+                <Box mt="8" mb="4">
                     {/* yes we could have created a global accordion component and use it anywhere we required
                 but as we are using a css lib so we can always look for this accordion structure and change as your need */}
                     <LectureAccordion lectures={lectures} />
+                </Box>
+                <Box>
+                    <Heading as="h2">Requirments</Heading>
+                    <Grid mb="4" templateColumns='repeat(2, 1fr)' spacing={4}>
+                        {description.map((item) => (
+                            <Text color="white" key={item}>{item}</Text>
+                        ))}
+                    </Grid>
+                </Box>
+                <Box mb="4">
+                    <Heading as="h2">
+                        Description
+                    </Heading>
+                    <Text color="white">
+                        Python is a high-level programming language that is widely used in various fields, including data science, machine learning, web development, and automation. This course is designed to introduce students to the fundamental concepts and syntax of Python programming.
+
+                        The course will cover topics such as variables, data types, control structures, functions, object-oriented programming, and file I/O. Students will learn how to write Python scripts to automate tasks, manipulate data, and build applications.
+                    </Text>
+                </Box>
+                <Box mb="2">
+                    <Heading as="h2" marginBottom="0">
+                        Instructor
+                    </Heading>
+                    <Text marginTop="0" marginBottom="0" color="red" fontWeight="bold" fontSize="2xl">SaiStupa Mohanty</Text>
+                </Box>
+                <Box >
+                    <Heading marginTop="0" as="h3">Head of the Data science at Trainings</Heading>
+                    <Flex>
+                        <Box>
+                            <Avatar
+                                size='lg'
+                                name='Prosper Otemuyiwa'
+                                src='https://bit.ly/prosper-baba'
+                            />{' '}</Box>
+                        <Box ml="8">
+                            <HStack mb="2">
+                                <AiOutlineStar color="white" size="1.5rem" />
+                                <Text color="white" fontWeight="bold" frontSize="xl">4.6 Instructor Rating</Text>
+                            </HStack>
+                            <HStack mb='2'>
+                                <SlBadge color="white" size="1.5rem" />
+                                <Text color="white" fontWeight="bold" frontSize="xl">1,017,652 Reviews</Text>
+                            </HStack>
+                            <HStack mb="2">
+                                <BiDoughnutChart color="white" size="1.5rem" />
+                                <Text color="white" fontWeight="bold" frontSize="xl">3,276,215 Students</Text>
+                            </HStack>
+                            <HStack mb="2">
+                                <BsFillPlayFill color="white" size="1.5rem" />
+                                <Text color="white" fontWeight="bold" frontSize="xl">60 Courses</Text>
+                            </HStack>
+                        </Box>
+                    </Flex>
                 </Box>
             </Box>
         </Box>

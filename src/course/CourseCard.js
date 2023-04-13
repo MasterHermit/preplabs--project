@@ -1,7 +1,9 @@
+//chakra components
 import { Box, Flex, Button, Text, Image, IconButton } from "@chakra-ui/react";
 
 //icons
 import { FaPlay } from "react-icons/fa"
+import { AiOutlineShareAlt } from "react-icons/ai"
 
 function CourseCard({ thumbnail, title, price }) {
     return (
@@ -52,6 +54,7 @@ function CourseCard({ thumbnail, title, price }) {
                     <Button
                         bg="black"
                         color="white"
+                        leftIcon={<AiOutlineShareAlt />}
                         mr={4}
                     >
                         Share

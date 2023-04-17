@@ -60,7 +60,6 @@ export default function UserAddress() {
                         <h2>
                             Address
                         </h2>
-                        <span className="form-cancel">X</span>
                     </div>
                     <div className="form-row row-1">
                         <div className="form-column-ua">

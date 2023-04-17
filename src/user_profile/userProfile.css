@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 70%;
     background: rgba(255, 255, 255, 0.2); 
     backdrop-filter: blur(8px);  
     border-radius: 2rem; 
@@ -28,15 +28,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
+    width: 90%;
     margin-top:20px;
 }
 .form-header{
-    margin:2rem;
+    margin-top:2rem;
     width:100%;
     display: flex;
     justify-content: space-between;
     color:black;
+    font-weight: bold;
 }
 .form-cancel{
     cursor: pointer;
@@ -48,7 +49,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    margin:0 20px 20px;
+    margin:0 0.5rem 0.5rem;
 }
 
 .form-column {
@@ -90,7 +91,7 @@ label {
     color: #ffffff;
     font-size: 20px;
     padding: 10px 20px 10px 20px;
-    margin: 15px;
+    margin: 1.5rem;
     text-decoration: none;
     border-radius: 28px;
 }
@@ -112,7 +113,7 @@ label {
         flex-direction: column;
         align-items: center;
         width: 90%;
-        margin-top: 20px;      
+        margin-top: 1rem;      
    }
    .form-row{
     display: flex;

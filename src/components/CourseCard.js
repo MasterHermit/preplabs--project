@@ -10,7 +10,6 @@ export default function CourseCard({ title, description, url }) {
                 <h3 className="course__title">{title}</h3>
                 <p className="course__description">{description}</p>
                 <div className="courseCard__rating__box">
-                    <span className="courseCard__rating__star"><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /></span>
                     <span className="courseCard__rating__bookmark"> <BsFillBookmarkFill />   </span>
                 </div>
             </div>

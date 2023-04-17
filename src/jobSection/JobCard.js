@@ -5,7 +5,7 @@ import { Box, Flex, Text, Image } from "@chakra-ui/react";
 const JobCard = ({ job, onClick }) => {
     return (
         //tasks to-do
-        
+
         <Box
             borderWidth="1px"
             borderRadius="lg"
@@ -22,9 +22,9 @@ const JobCard = ({ job, onClick }) => {
                     <Text fontSize="xl" marginTop="0" marginBottom="0" fontWeight="bold">
                         {job.title}
                     </Text>
-                    <Text color="white" marginTop="0" marginBottom="0" >{job.company}</Text>
-                    <Text color="white" marginTop="0" marginBottom="0">{job.location} ({job.type})</Text>
-                    <Text color="white" marginTop="0" marginBottom="0" >2 Days ago</Text>
+                    <Text marginTop="0" marginBottom="0" >{job.company}</Text>
+                    <Text marginTop="0" marginBottom="0">{job.location} ({job.type})</Text>
+                    <Text marginTop="0" marginBottom="0" >2 Days ago</Text>
                 </Box>
             </Flex>
         </Box>

@@ -33,23 +33,30 @@ export default function TextEditor() {
         setIsLoading(true);
         const file = event.target.files[0];
         //Tasks to-do
-        //check if it is a valid image file or not
-        //dissolve the error appearing if you cancel instead of selecting a image
-        try {
-            const newImage = { file };
-            setImages((prevImages) => [...prevImages, newImage]);
-        } catch (error) {
-            console.error(error);
-            toast({
-                title: "Error",
-                description: "Failed to upload image.",
-                status: "error",
-                duration: 3000,
-                isClosable: true,
-            });
-        } finally {
-            setIsLoading(false);
+        //bug fixed but need some testing
+        //check if it is a valid image file or not =>done
+        //dissolve the error appearing if you cancel instead of selecting a image =>done
+        if (file.type.split('/')[0] === 'image') {
+            try {
+                const newImage = { file };
+                setImages((prevImages) => [...prevImages, newImage]);
+            } catch (error) {
+                console.error(error);
+                toast({
+                    title: "Error",
+                    description: "Failed to upload image.",
+                    status: "error",
+                    duration: 3000,
+                    isClosable: true,
+                });
+            } finally {
+                setIsLoading(false);
+            }
+        } else {
+            console.log('This is not an image file');
+            return;
         }
+
     };
 
     const handleImageDelete = (index) => {
@@ -71,15 +78,33 @@ export default function TextEditor() {
     //async might be req for image uploading to api
     const handleSavePost = (e) => {
         if (postData.title.trim() === "") {
-            alert("no title bro");
+            toast({
+                title: "Error",
+                description: "Please enter a title",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
             return;
         }
         if (postData.description.trim() === "") {
-            alert("no description bro");
+            toast({
+                title: "Error",
+                description: "Please enter a description",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
             return;
         }
         if (postData.category.trim() === "") {
-            alert("no category bro");
+            toast({
+                title: "Error",
+                description: "Please select a category",
+                status: "error",
+                duration: 3000,
+                isClosable: true,
+            });
             return;
         }
         console.log(postData, images);
@@ -111,8 +136,8 @@ export default function TextEditor() {
             <div className="text__editor__box">
                 {/* title */}
 
-                <Text fontSize="xl" color="white">
-                    Title
+                <Text fontSize="xl" color="black">
+                    Title *
                 </Text>
                 <Input
                     mb="2rem"
@@ -120,18 +145,18 @@ export default function TextEditor() {
                     value={postData.title}
                     onChange={handleOnChange}
                     className="text__editor__input"
-                    colorScheme="white"
-                    color="white"
+                    color="black"
                 />
 
                 {/* description  */}
 
-                <Text fontSize="xl" color="white">
-                    Description
+                <Text fontSize="xl" color="black">
+                    Description *
                 </Text>
                 <Textarea
                     h="30vh"
                     mb="2rem"
+                    color="black"
                     name="description"
                     value={postData.description}
                     onChange={handleOnChange}
@@ -140,11 +165,11 @@ export default function TextEditor() {
 
                 {/* image uploading section */}
 
-                <Text fontSize="xl" color="white">
+                <Text fontSize="xl" color="black">
                     Upload
                 </Text>
                 <Box p="8">
-                    <Flex alignItems="center">
+                    <Flex flexDirection={{ base: "column", md: "row" }} alignItems="center">
                         <Input
                             type="file"
                             datamaxsize="1024"
@@ -160,6 +185,8 @@ export default function TextEditor() {
                                 size="sm"
                                 variant="outline"
                                 colorScheme="white"
+                                borderWidth="2"
+                                borderColor="black"
                                 w="8rem"
                                 h="8rem"
                                 cursor="pointer"
@@ -172,34 +199,50 @@ export default function TextEditor() {
                                 {isLoading ? (
                                     <CircularProgress size="28px" isIndeterminate color="teal" />
                                 ) : (
-                                    <Box as="span" fontSize="sm">
+                                    <Box
+                                        as="span"
+                                        color="black"
+
+                                        fontSize="sm"
+                                        border="black"
+                                    >
                                         Upload Image
                                     </Box>
                                 )}
                             </Button>
                         </label>
                         {images.length < 1 ? "" : images.map((image, index) => (
-                            <Box w="15%" h="15%" key={index} position="relative" ml={2}>
-                                <CloseButton
-                                    size="md"
-                                    colorScheme="red"
-                                    position="absolute"
-                                    top="-0.5rem"
-                                    right="-0.5rem"
-                                    onClick={() => handleImageDelete(index)}
-                                />
-                                <Image
-                                    src={URL.createObjectURL(image.file)}
-                                    alt="Uploaded image"
-                                    objectFit="cover"
-                                />
-                            </Box>
+                            <Flex w={{ base: "35%", md: "15%" }}
+                                h={{ base: "35%", md: "15%" }}
+                                mb={{ base: "4" }}
+                                key={index} position="relative" ml={2}>
+                                <Box>
+                                    <CloseButton
+                                        size="md"
+                                        color="white"
+                                        position="absolute"
+                                        top="-0.5rem"
+                                        right="-0.5rem"
+                                        onClick={() => handleImageDelete(index)}
+                                    />
+                                </Box>
+                                <Box>
+                                    <Image
+                                        src={URL.createObjectURL(image.file)}
+                                        alt="Uploaded image"
+                                        objectFit="cover"
+                                    />
+                                </Box>
+                            </Flex>
                         ))}
                     </Flex>
                 </Box>
                 {/* image uploading section end */}
 
                 {/* select category */}
+                <Text fontSize="xl" color="black">
+                    Category *
+                </Text>
                 <Select
                     mb="2rem"
                     // w="25%"
@@ -208,7 +251,7 @@ export default function TextEditor() {
                     onChange={handleOnChange}
                     placeholder="Select option"
                     className="text__editor__input"
-                    color="white"
+                    color="black"
                 >
                     <option style={{ color: "black" }} value="option1">
                         Option 1
@@ -224,13 +267,18 @@ export default function TextEditor() {
                 {/* save and cancel button */}
 
                 <div className="text__editor__button__box">
-                    <Button bg="black" color="white" className="text__editor__button">
+                    <Button
+                        bg="black"
+                        color="white"
+                        _hover={{ bg: "red" }}
+                        className="text__editor__button">
                         Cancel
                     </Button>
                     <Button
                         onClick={handleSavePost}
                         bg="black"
                         color="white"
+                        _hover={{ bg: "gray" }}
                         className="text__editor__button"
                     >
                         Apply

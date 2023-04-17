@@ -31,18 +31,17 @@ function JobDropdowns() {
         <Box
             display="flex"
             justifyContent="left"
-            bg="blackAlpha.600"
         >
             {/* First Dropdown */}
             <Box
                 alignContent="center" ml="4" w="15%">
                 <Select
                     borderRadius="2xl"
-                    sx={{
-                        backgroundImage: "linear-gradient(90deg, rgba(254, 254, 254, 0.56) -11.62%, rgba(255, 255, 255, 0.16) 87.29%)",
-                        boxShadow: "2px 4px 50px rgba(0, 0, 0, 0.25)",
-                    }}
-                    color="white"
+                    // sx={{
+                    //     backgroundImage: "linear-gradient(90deg, rgba(254, 254, 254, 0.56) -11.62%, rgba(255, 255, 255, 0.16) 87.29%)",
+                    //     boxShadow: "2px 4px 50px rgba(0, 0, 0, 0.25)",
+                    // }}
+                    color="black"
                     placeholder="Job Type"
                     name="jobType"
                     value={selectedItems.jobType}
@@ -57,11 +56,7 @@ function JobDropdowns() {
             <Box alignContent="center" ml="4" w="15%">
                 <Select
                     borderRadius="2xl"
-                    sx={{
-                        backgroundImage: "linear-gradient(90deg, rgba(254, 254, 254, 0.56) -11.62%, rgba(255, 255, 255, 0.16) 87.29%)",
-                        boxShadow: "2px 4px 50px rgba(0, 0, 0, 0.25)",
-                    }}
-                    color="white"
+                    color="black"
                     placeholder="Experience Level"
                     name="expLevel"
                     value={selectedItems.expLevel}
@@ -77,11 +72,11 @@ function JobDropdowns() {
             <Box alignContent="center" ml="4" w="15%">
                 <Select
                     borderRadius="2xl"
-                    sx={{
-                        backgroundImage: "linear-gradient(90deg, rgba(254, 254, 254, 0.56) -11.62%, rgba(255, 255, 255, 0.16) 87.29%)",
-                        boxShadow: "2px 4px 50px rgba(0, 0, 0, 0.25)",
-                    }}
-                    color="white"
+                    // sx={{
+                    //     backgroundImage: "linear-gradient(90deg, rgba(254, 254, 254, 0.56) -11.62%, rgba(255, 255, 255, 0.16) 87.29%)",
+                    //     boxShadow: "2px 4px 50px rgba(0, 0, 0, 0.25)",
+                    // }}
+                    color="black"
                     placeholder="Company"
                     name="company"
                     value={selectedItems.company}
@@ -97,11 +92,11 @@ function JobDropdowns() {
             <Box alignContent="center" ml="4" w="15%">
                 <Select
                     borderRadius="2xl"
-                    sx={{
-                        backgroundImage: "linear-gradient(90deg, rgba(254, 254, 254, 0.56) -11.62%, rgba(255, 255, 255, 0.16) 87.29%)",
-                        boxShadow: "2px 4px 50px rgba(0, 0, 0, 0.25)",
-                    }}
-                    color="white"
+                    // sx={{
+                    //     backgroundImage: "linear-gradient(90deg, rgba(254, 254, 254, 0.56) -11.62%, rgba(255, 255, 255, 0.16) 87.29%)",
+                    //     boxShadow: "2px 4px 50px rgba(0, 0, 0, 0.25)",
+                    // }}
+                    color="black"
                     placeholder="Location"
                     name="location"
                     value={selectedItems.location}

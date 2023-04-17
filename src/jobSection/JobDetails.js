@@ -25,27 +25,27 @@ const JobDetails = ({ job }) => {
             <Text fontSize="xl" fontWeight="bold">
                 {job.title}
             </Text>
-            <Text color="white">{job.company}</Text>
-            <Text color="white">{job.location}  {job.type}</Text>
+            <Text >{job.company}</Text>
+            <Text >{job.location}  {job.type}</Text>
             <HStack m="2">
-                <FaSuitcase color="white" size="1.5rem" />
-                <Text m="4" color="white" fontWeight="medium">
+                <FaSuitcase size="1.5rem" />
+                <Text m="4" fontWeight="medium">
                     full-time associate
                 </Text>
             </HStack>
             <HStack m="2">
-                <CgNotes color="white" size="1.5rem" />
-                <Text m="4" color="white" fontWeight="medium">
+                <CgNotes size="1.5rem" />
+                <Text m="4" fontWeight="medium">
                     500 - 1,001 employees
                 </Text>
             </HStack>
             <HStack m="2">
-                <AiOutlineUnorderedList color="white" size="1.5rem" />
+                <AiOutlineUnorderedList size="1.5rem" />
                 {displayedSkills.map((skill) => (
-                    <Text color="white" key={skill}>{skill}</Text>
+                    <Text key={skill}>{skill}</Text>
                 ))}
                 {hiddenSkillsCount > 0 && (
-                    <Button variant="link" color="white !important" textDecoration="none" onClick={toggleShowAll}>
+                    <Button variant="link" color="black !important" textDecoration="none" onClick={toggleShowAll}>
                         {showAllSkills ? "Show less" : `+ ${hiddenSkillsCount} more`}
                     </Button>
                 )}
@@ -72,10 +72,10 @@ const JobDetails = ({ job }) => {
                 About the job
             </Text>
             <Text m="4" fontSize="l" fontWeight="bold">Job Brief</Text>
-            <Text m="4" color="white">We are currently hiring a Performance Marketing manager with a Successful track record to drive revenue, user acquisition and brand awarness huivhpiurebvibe onvrobewubvuo oivbeoibrvon oj ivrobje  ivneornoivn </Text>
+            <Text m="4" >We are currently hiring a Performance Marketing manager with a Successful track record to drive revenue, user acquisition and brand awarness huivhpiurebvibe onvrobewubvuo oivbeoibrvon oj ivrobje  ivneornoivn </Text>
             <Text m="4" fontSize="xl" fontWeight="bold">Main Responsibilities of a Performance Marketing Manager</Text>
-            <Text ml="4" color="white" fontSize="l" fontWeight="bold">Your responsibilites will include:</Text>
-            <UnorderedList ml="10" color="white">
+            <Text ml="4"  fontSize="l" fontWeight="bold">Your responsibilites will include:</Text>
+            <UnorderedList ml="10" >
                 <ListItem>Lorem ipsum dolor sit amet</ListItem>
                 <ListItem>Consectetur adipiscing elit</ListItem>
                 <ListItem>Integer molestie lorem at massa</ListItem>

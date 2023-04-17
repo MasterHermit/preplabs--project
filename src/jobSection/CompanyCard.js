@@ -19,7 +19,6 @@ function CompanyCard({ logoSrc, name, customerService, numOfEmployees, about }) 
                 <Button
                     ml="2"
                     variant="link"
-                    color="white"
                     textDecoration="none"
                     onClick={() => setShowMore(prevVal => !prevVal)}>
                     {showMore ? "show less" : " show more"}

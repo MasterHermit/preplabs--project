@@ -1,6 +1,4 @@
 .text__editor__background{
-        background: rgb(97, 25, 132);
-        background: linear-gradient(90deg, rgba(97, 25, 132, 1) 0%, rgba(220, 38, 72, 1) 47%, rgba(220, 38, 72, 1) 100%);
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -10,7 +8,6 @@
     margin-right: 2%;
 }
 .text__editor__input{
-background: linear-gradient(90deg, rgba(254, 254, 254, 0.56) -3.22%, rgba(255, 255, 255, 0.16) 95.7%);
     backdrop-filter: blur(25px);
 }
 .text__editor__button__box{

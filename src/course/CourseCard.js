@@ -7,7 +7,11 @@ import { AiOutlineShareAlt } from "react-icons/ai"
 
 function CourseCard({ thumbnail, title, price }) {
     return (
-        <Flex direction="column" borderWidth="1px" borderRadius="lg" overflow="hidden">
+        <Flex
+            direction="column"
+            borderRadius="lg"
+            overflow="hidden"
+        >
 
             {/* 1st section */}
             <Box position="relative">
@@ -48,7 +52,7 @@ function CourseCard({ thumbnail, title, price }) {
                     display="flex"
                     justifyContent="center"
                     mb={2}>
-                    <Text color="white" marginBottom="0" marginTop="0">${price} per month</Text>
+                    <Text  marginBottom="0" marginTop="0">${price} per month</Text>
                 </Box>
                 <Box display="Flex" justifyContent="center" mb={4}>
                     <Button
@@ -68,7 +72,7 @@ function CourseCard({ thumbnail, title, price }) {
                     </Button>
                 </Box>
                 <Box mb={2}>
-                    <Text color="white">
+                    <Text c>
                         This course is designed to teach you the fundamentals of React. You will learn how to create and manage React components, work with state and props, and more.
                     </Text>
                 </Box>

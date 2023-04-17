@@ -23,13 +23,13 @@ const images = [
 export default function App() {
     return (
         <div>
-            <CourseDetails />
-            {/* <Router>
+
+            <Router>
                 <Routes>
                     <Route path="/jobs" element={<JobSection />} />
                     <Route path="/jobs/details" element={<MobileViewJobSection />} />
                 </Routes>
-            </Router> */}
+            </Router>
         </div>
     )
 }

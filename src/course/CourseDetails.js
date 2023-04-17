@@ -97,73 +97,77 @@ function CourseDetails() {
         //make mobile resonsive
         //if you already have a parent div to put the component then remmove the first box
         <Box
-            bgGradient="linear(to-b, #000000, #beb99e)"
         >
             <Box mx="8" py="8">
                 <Flex justify="space-between">
                     <Box w="75%">
                         <Heading as="h1" size="xl" mb="4">Learning Python for Data Analysis And Visualization</Heading>
-                        <Heading as="h2" size="l" mb="4" color="white">Learn Python and how to use it to analyze your data  and present your results and datas</Heading>
+                        <Heading as="h2" size="l" mb="4" >Learn Python and how to use it to analyze your data  and present your results and datas</Heading>
                         <Flex m="4">
                             <Button bg="black" color="white" borderRadius="2xl" mr="8">
                                 Bestseller
                             </Button>
                             <Text>Rating Sytem</Text>
                         </Flex>
-                        <Text color="white">Created by Saistupa</Text>
+                        <Text >Created by Saistupa</Text>
                         <Flex mb="12">
                             <HStack mr="12">
-                                <TbSettings2 color="white" size="1.5rem" />
-                                <Text color="white">
+                                <TbSettings2 size="1.5rem" />
+                                <Text >
                                     Last updated 9/2019
                                 </Text>
                             </HStack>
                             <HStack>
-                                <MdOutlineLanguage color="white" size="1.5rem" />
-                                <Text color="white">English</Text>
+                                <MdOutlineLanguage size="1.5rem" />
+                                <Text>English</Text>
                             </HStack>
                         </Flex>
                         <Grid mb="12" templateColumns='repeat(2, 1fr)' spacing={4}>
                             {description.map((item) => (
-                                <Text color="white" key={item}>{item}</Text>
+                                <Text key={item}>{item}</Text>
                             ))}
                         </Grid>
                         <Grid templateColumns='repeat(2, 1fr)' spacing={4}>
                             <Box m="4">
                                 <HStack mr="12">
-                                    <AiOutlineVideoCamera color="white" size="1.5rem" />
-                                    <Text color="white">
+                                    <AiOutlineVideoCamera size="1.5rem" />
+                                    <Text >
                                         21 hours on-demand video
                                     </Text>
                                 </HStack>
                             </Box>
                             <Box m="4">
                                 <HStack mr="12">
-                                    <AiOutlineTrophy color="white" size="1.5rem" />
-                                    <Text color="white">
+                                    <AiOutlineTrophy size="1.5rem" />
+                                    <Text >
                                         certificate of completion
                                     </Text>
                                 </HStack>
                             </Box>
                             <Box m="4">
                                 <HStack mr="12">
-                                    <BiNote color="white" size="1.5rem" />
-                                    <Text color="white">
+                                    <BiNote size="1.5rem" />
+                                    <Text >
                                         3 articles
                                     </Text>
                                 </HStack>
                             </Box>
                             <Box m="4">
                                 <HStack mr="12">
-                                    <FaFileDownload color="white" size="1.5rem" />
-                                    <Text color="white">
+                                    <FaFileDownload size="1.5rem" />
+                                    <Text >
                                         4 downloadable resources
                                     </Text>
                                 </HStack>
                             </Box>
                         </Grid>
                     </Box>
-                    <Box w="25%">
+                    <Box
+                        borderWidth="2px"
+                        borderColor="black"
+                        borderRadius="lg"
+                        boxShadow="0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)"
+                        w="25%">
                         <CourseCard thumbnail={course.thumbnail} title={course.title} price={course.price} />
                     </Box>
                 </Flex>
@@ -176,7 +180,7 @@ function CourseDetails() {
                     <Heading as="h2">Requirments</Heading>
                     <Grid mb="4" templateColumns='repeat(2, 1fr)' spacing={4}>
                         {description.map((item) => (
-                            <Text color="white" key={item}>{item}</Text>
+                            <Text key={item}>{item}</Text>
                         ))}
                     </Grid>
                 </Box>
@@ -184,7 +188,7 @@ function CourseDetails() {
                     <Heading as="h2">
                         Description
                     </Heading>
-                    <Text color="white">
+                    <Text >
                         Python is a high-level programming language that is widely used in various fields, including data science, machine learning, web development, and automation. This course is designed to introduce students to the fundamental concepts and syntax of Python programming.
 
                         The course will cover topics such as variables, data types, control structures, functions, object-oriented programming, and file I/O. Students will learn how to write Python scripts to automate tasks, manipulate data, and build applications.
@@ -194,7 +198,7 @@ function CourseDetails() {
                     <Heading as="h2" marginBottom="0">
                         Instructor
                     </Heading>
-                    <Text marginTop="0" marginBottom="0" color="red" fontWeight="bold" fontSize="2xl">SaiStupa Mohanty</Text>
+                    <Text marginTop="0" marginBottom="0" fontWeight="bold" fontSize="2xl">SaiStupa Mohanty</Text>
                 </Box>
                 <Box >
                     <Heading marginTop="0" as="h3">Head of the Data science at Trainings</Heading>
@@ -207,20 +211,20 @@ function CourseDetails() {
                             />{' '}</Box>
                         <Box ml="8">
                             <HStack mb="2">
-                                <AiOutlineStar color="white" size="1.5rem" />
-                                <Text color="white" fontWeight="bold" frontSize="xl">4.6 Instructor Rating</Text>
+                                <AiOutlineStar size="1.5rem" />
+                                <Text fontWeight="bold" frontSize="xl">4.6 Instructor Rating</Text>
                             </HStack>
                             <HStack mb='2'>
-                                <SlBadge color="white" size="1.5rem" />
-                                <Text color="white" fontWeight="bold" frontSize="xl">1,017,652 Reviews</Text>
+                                <SlBadge size="1.5rem" />
+                                <Text fontWeight="bold" frontSize="xl">1,017,652 Reviews</Text>
                             </HStack>
                             <HStack mb="2">
-                                <BiDoughnutChart color="white" size="1.5rem" />
-                                <Text color="white" fontWeight="bold" frontSize="xl">3,276,215 Students</Text>
+                                <BiDoughnutChart size="1.5rem" />
+                                <Text fontWeight="bold" frontSize="xl">3,276,215 Students</Text>
                             </HStack>
                             <HStack mb="2">
-                                <BsFillPlayFill color="white" size="1.5rem" />
-                                <Text color="white" fontWeight="bold" frontSize="xl">60 Courses</Text>
+                                <BsFillPlayFill c size="1.5rem" />
+                                <Text fontWeight="bold" frontSize="xl">60 Courses</Text>
                             </HStack>
                         </Box>
                     </Flex>

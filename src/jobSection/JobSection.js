@@ -24,6 +24,7 @@ const JobSection = () => {
                 const response = await fetch(" http://localhost:8000/jobs");
                 const data = await response.json();
                 setJobs(data);
+                setSelectedJob(data[0]);
             } catch (error) {
                 console.log(error);
             }
@@ -59,11 +60,11 @@ const JobSection = () => {
         "&::-webkit-scrollbar": {
             width: "8px",
             borderRadius: "8px",
-            backgroundColor: "black",
+            backgroundColor: "white",
         },
         "&::-webkit-scrollbar-thumb": {
             borderRadius: "8px",
-            backgroundColor: "white",
+            backgroundColor: "black",
         },
     }
 
@@ -74,7 +75,7 @@ const JobSection = () => {
         <>
             <JobDropdowns />
             <Flex
-                bg="blackAlpha.600"
+
                 flexDirection={{ base: "column", md: "row" }}
             >
                 {/* to apply scroll in chakra we have to assign maxHeight Property */}

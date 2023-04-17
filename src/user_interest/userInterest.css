@@ -15,16 +15,20 @@
 .user__interest__header__slogan{
     color:black;
     font-weight: bold;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
 }
 .user__interest__header__qoute{
     color:black;
+    font-size: 1rem;
+    font-weight: bold;
 }
 .user__interest__search__bar{
     width: 30%;
     height:2.5rem;
     padding: 1%;
     margin-top: 2rem;
+    border:1px solid gray;
     border-radius: 0.5rem;
 }
 /* .user__interest__search__bar::placeholder{

@@ -1,14 +1,10 @@
  .background{
      height: 100vh;
-     background: rgb(97, 25, 132);
-     background: linear-gradient(90deg, rgba(97, 25, 132, 1) 0%, rgba(220, 38, 72, 1) 47%, rgba(220, 38, 72, 1) 100%);
      display: flex;
      justify-content: center;
      align-items: center;   
  }
- .background>*{
-        background: linear-gradient(90deg, rgba(97, 25, 132, 1) 0%, rgba(220, 38, 72, 1) 47%, rgba(220, 38, 72, 1) 100%);
- }
+
 .user__profile__background__card{
     display: flex;
     flex-direction: column;

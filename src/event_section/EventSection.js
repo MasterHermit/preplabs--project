@@ -1,30 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useMediaQuery, Box, Flex } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom"
 
 //components
-import JobDetails from "./JobDetails";
-import JobCard from "./JobCard";
-import MobileViewJobSection from "./MobileViewJobSection";
-import JobDrawers from "./JobDrawers";
-import JobDropdowns from "./JobDropdowns";
+import EventDetails from "./EventDetails"
+import EventDropdowns from "./EventDropdowns";
+import EventCard from "./EventCard";
 
+export default function EventSection() {
 
-const JobSection = () => {
-    const [jobs, setJobs] = useState([]);
-    const [selectedJob, setSelectedJob] = useState(null);
-    const [isLargerThanMobile] = useMediaQuery("(min-width: 600px)");
-    const navigate = useNavigate();
+    const [events, setEvents] = useState([]);
+    const [selectedEvent, setSelectedEvent] = useState(null);
 
     useEffect(() => {
         // Fetch job data from an API 
 
         const fetchData = async () => {
             try {
-                const response = await fetch(" http://localhost:8000/jobs");
+                const response = await fetch(" http://localhost:8000/events");
                 const data = await response.json();
-                setJobs(data);
-                setSelectedJob(data[0]);
+                console.log(data);
+                setEvents(data);
+                setSelectedEvent(data[0]);
             } catch (error) {
                 console.log(error);
             }
@@ -35,18 +31,18 @@ const JobSection = () => {
     }, []);
 
 
-    const handleScreenRender = (job) => {
-        if (isLargerThanMobile) {
-            handleJobCardClick(job);
-        }
-        else {
-            console.log(job);
-            navigate("/jobs/details", { state: { job } })
-        }
+    const handleScreenRender = (event) => {
+        // if (isLargerThanMobile) {
+        handleJobCardClick(event);
+
+        //   else {
+        //       console.log(job);
+        //   navigate("/jobs/details", {state: {job} })
+        // }
     }
 
-    const handleJobCardClick = (job) => {
-        setSelectedJob(job);
+    const handleJobCardClick = (event) => {
+        setSelectedEvent(event);
     };
 
     const handleSearchInputChange = (event) => {
@@ -74,7 +70,7 @@ const JobSection = () => {
         //tasks to-do
         //go to JobDropdowns and fix dropdowns in mobile view
         <>
-            <JobDropdowns />
+            <EventDropdowns />
             <Flex
 
                 flexDirection={{ base: "column", md: "row" }}
@@ -89,18 +85,17 @@ const JobSection = () => {
                     <Flex flexDirection="column">
                         <Box marginTop="4">
                             {/* Render job cards here */}
-                            {jobs.map((job) => (
-                                <JobCard key={job.id} job={job} onClick={() => handleScreenRender(job)} />
+                            {events.map((event) => (
+                                <EventCard key={event.id} event={event} onClick={() => handleScreenRender(event)} />
                             ))}
                         </Box>
                     </Flex>
                 </Box>
                 <Box width={{ base: "100%", md: "70%" }} maxHeight="100vh" overflowY="scroll" css={css}>
-                    {selectedJob && <JobDetails job={selectedJob} />}
+                    {selectedEvent && <EventDetails event={selectedEvent} />}
                 </Box>
             </Flex>
         </>
     );
-};
 
-export default JobSection;
+}

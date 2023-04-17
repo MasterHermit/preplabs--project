@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Box } from "@chakra-ui/react"
 import "./userInterest.css"
 
 export default function UserInterest() {
@@ -25,7 +26,7 @@ export default function UserInterest() {
     //interests buttons
     const toBeRenderedInterests = filteredInterests.map((interest) => {
         return (
-            <div
+            <Box as="div"
                 onClick={() => handleInterestClick(interest)}
                 className={`user__interest__element`}
                 key={interest}
@@ -33,9 +34,11 @@ export default function UserInterest() {
                     backgroundColor: selectedInterests.includes(interest) ? 'skyBlue' : '',
                     color: selectedInterests.includes(interest) ? "white" : "black"
                 }}
+                transition={"all ease-in-out 100ms"}
+                _hover={{ backgroundColor: "black", transform: "scale(1.05)", color: "white !important" }}
             >
                 {interest}
-            </div >
+            </Box >
         )
     })
 

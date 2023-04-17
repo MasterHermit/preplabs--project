@@ -1,7 +1,7 @@
 import React from 'react'
 
 //chakra components
-import { Box, Flex, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Image, Text, Button, UnorderedList, ListItem } from "@chakra-ui/react";
 
 //icons
 import { BsBuildings, BsCurrencyRupee } from "react-icons/bs"
@@ -9,7 +9,12 @@ import { GoLocation } from "react-icons/go"
 import { AiOutlineCalendar, AiOutlineHeart } from "react-icons/ai";
 import { FiEye, FiClock, } from "react-icons/fi";
 
+
 export default function EventDetails({ event }) {
+    const data = [
+        { id: 1, name: "Item 1" },
+        { id: 2, name: "Item 2" },
+        { id: 3, name: "Item 3" },]
     const hashTags = event.hashTags.map((hashTag) => {
         return (
             <Text mr="4" p="1" color="black" fontWeight="bold">#{hashTag}</Text>
@@ -18,10 +23,10 @@ export default function EventDetails({ event }) {
     return (
         <Box padding="4" margin="3">
             <Flex>
-                <Box marginRight="4">
+                <Box width="10%" marginRight="4">
                     <Image src="https://images.unsplash.com/photo-1544216291-b1dc4f7c8735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbXBhbnklMjBsb2dvc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt={`${event.company} logo`} boxSize="75px" objectFit="contain" />
                 </Box>
-                <Box>
+                <Box width="70%">
                     <Box mb="2">
                         <Text fontSize="xl" marginTop="0" marginBottom="0" fontWeight="bold">
                             {event.title}
@@ -62,19 +67,45 @@ export default function EventDetails({ event }) {
                                 <Text>200 views</Text>
                             </HStack>
                         </Flex>
-                        <Flex>
-                            <HStack mr="4">
-                                <BsCurrencyRupee size="1.5rem" />
-                                <Text>100</Text>
-                            </HStack>
-                            <HStack>
-                                <FiEye size="1.5rem" />
-                                <Text>200 views</Text>
-                            </HStack>
+                        <Flex alignItems="center">
+                            <Box>
+                                <HStack mr="4">
+                                    <BsCurrencyRupee size="1.5rem" />
+                                    <Text>100</Text>
+                                </HStack>
+                            </Box>
+                            <Box>
+                                <Button bg="black" color="white" borderRadius="full">Apply</Button>
+                            </Box>
                         </Flex>
                     </Box>
                 </Box>
             </Flex>
+            <Box>
+                <Box>
+                    <Text marginBottom="0" fontWeight="bold" >Eligibility</Text>
+                    <Text marginTop="0">All</Text>
+                </Box>
+                <Box>
+                    <Text fontWeight="bold" >About the Internhip</Text>
+                    <Box>
+                        <Text fontWeight="semibold">Black and blue Hiring for the position of trainee </Text>
+                        <Text>
+                            We are excited to announce that we are currently looking for a full stack developer intern to join our team. As a full stack developer intern, you will have the opportunity to work on a variety of exciting projects and gain hands-on experience with cutting-edge technologies.
+
+                            The ideal candidate for this position should have a strong foundation in web development, with experience in both front-end and back-end technologies. You should be comfortable working with HTML, CSS, and JavaScript, as well as popular front-end frameworks like React, Vue, or Angular.
+                        </Text>
+                    </Box>
+                    <Box>
+                        <Text fontWeight="bold">Responsibilities of Candidate:</Text>
+                        <UnorderedList>
+                            {data.map((item) => (
+                                <ListItem key={item.id}>{item.name}</ListItem>
+                            ))}
+                        </UnorderedList>
+                    </Box>
+                </Box>
+            </Box>
         </Box>
     )
 }

@@ -202,7 +202,6 @@ export default function TextEditor() {
                                     <Box
                                         as="span"
                                         color="black"
-
                                         fontSize="sm"
                                         border="black"
                                     >

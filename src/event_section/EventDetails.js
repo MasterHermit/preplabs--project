@@ -6,8 +6,9 @@ import { Box, Flex, HStack, Image, Text, Button, UnorderedList, ListItem } from 
 //icons
 import { BsBuildings, BsCurrencyRupee } from "react-icons/bs"
 import { GoLocation } from "react-icons/go"
-import { AiOutlineCalendar, AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineCalendar, AiOutlineHeart, AiFillTrophy } from "react-icons/ai";
 import { FiEye, FiClock, } from "react-icons/fi";
+
 
 
 export default function EventDetails({ event }) {
@@ -104,6 +105,52 @@ export default function EventDetails({ event }) {
                             ))}
                         </UnorderedList>
                     </Box>
+
+
+                    <Box>
+                        <Text fontWeight="bold">What are the important dates & destinations</Text>
+                        <HStack>
+                            <AiOutlineCalendar size="1.5rem" mr="4" />
+                            <Box mt="2">
+                                <Text marginTop="0" marginBottom="0">
+                                    Registration deadline
+                                </Text>
+                                <Text marginTop="0" marginBottom="0">
+                                    01 May 23,08:00 PM IST
+                                </Text>
+                            </Box>
+                        </HStack>
+                    </Box>
+
+                    <Box mt="6">
+                        <Text marginTop="0" marginBottom="0" fontWeight="bold">Contact The Organisers</Text>
+                        <Flex mt="2">
+                            <Box mr="8">
+                                <Text marginTop="0" marginBottom="0">SaiStupa</Text>
+                                <Text marginTop="0" marginBottom="0">+91 6574290241</Text>
+                            </Box>
+                            <Box>
+                                <Text marginTop="0" marginBottom="0">SaiStupa</Text>
+                                <Text marginTop="0" marginBottom="0">+91 6574290241</Text>
+                            </Box>
+                        </Flex>
+                    </Box>
+
+                    <Box mt="6">
+                        <Text fontWeight="extrabold">What's at stake - Rewards and Prizes ?</Text>
+                        <Box borderWidth="2px" borderColor="black" display="flex" flexDirection="column" alignItems="center" >
+                            <Text>Winner</Text>
+                            <Box>
+                                <HStack>
+                                    <Text>
+                                        INR 6000
+                                    </Text>
+                                    <AiFillTrophy size="8rem" color="gold" />
+                                </HStack>
+                            </Box>
+                        </Box>
+                    </Box>
+
                 </Box>
             </Box>
         </Box>

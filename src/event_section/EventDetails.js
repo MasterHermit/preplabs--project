@@ -1,4 +1,6 @@
 import React from 'react'
+//components
+import MultiImageCarousel from '../components/MultiItemCarousel';
 
 //chakra components
 import { Box, Flex, HStack, Image, Text, Button, UnorderedList, ListItem } from "@chakra-ui/react";
@@ -16,6 +18,30 @@ export default function EventDetails({ event }) {
         { id: 1, name: "Item 1" },
         { id: 2, name: "Item 2" },
         { id: 3, name: "Item 3" },]
+    const datas = [
+        {
+            id: 1,
+            src: 'https://placeimg.com/840/480/animals',
+            alt: 'Image 1',
+        },
+        {
+            id: 2,
+            src: 'https://placeimg.com/840/480/nature',
+            alt: 'Image 2',
+        },
+        {
+            id: 3,
+            src: 'https://placeimg.com/840/480/people',
+            alt: 'Image 3',
+        },
+        {
+            id: 1,
+            src: 'https://placeimg.com/840/480/animals',
+            alt: 'Image 1',
+        },
+        // ... add more data objects as needed
+    ];
+
     const hashTags = event.hashTags.map((hashTag) => {
         return (
             <Text mr="4" p="1" color="black" fontWeight="bold">#{hashTag}</Text>
@@ -136,26 +162,36 @@ export default function EventDetails({ event }) {
                         </Flex>
                     </Box>
 
-                    <Text fontWeight="extrabold">What's at stake - Rewards and Prizes ?</Text>
-                    <Box display="flex" justifyContent="center" mt="6">
+                    <Text fontWeight="extrabold" mt="4">What's at stake - Rewards and Prizes ?</Text>
+                    <Box display="flex" mt="6">
                         <Box
+                            w={{ base: "90%", md: "40%" }}
                             borderWidth="2px"
-                            w="80%"
                             borderColor="black"
+                            borderRadius="xl"
                             display="flex"
                             flexDirection="column"
                             justifyContent="center"
-                            alignItems="center" >
-                            <Text>Winner</Text>
-                            <Box>
-                                <HStack>
-                                    <Text fontWeight="extrabold">
-                                        INR 6000
+                            alignItems="center"
+                        >
+                            <Text fontWeight="bold" fontSize="xl">Winner</Text>
+                            <Box w={{ base: "90%", md: "80%" }} >
+                                <HStack display={"flex"} justifyContent={"space-between"}>
+                                    <Text fontSize="2xl" fontWeight="extrabold">
+                                        INR 6,000
                                     </Text>
                                     <AiFillTrophy size="8rem" color="gold" />
                                 </HStack>
                             </Box>
                         </Box>
+                    </Box>
+
+                    <Box mt="4">
+                        <Text marginTop="0" fontWeight="bold">In Pictures</Text>
+                        <Box display="flex" justifyContent="center">
+                            <MultiImageCarousel datas={datas} />
+                        </Box>
+
                     </Box>
 
                 </Box>

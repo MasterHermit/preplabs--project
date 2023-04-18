@@ -17,33 +17,83 @@
         },
         {
             "id": 2,
-            "title": "Java Backend Developer",
-            "company": "vmware",
-            "location": "mumbai",
+            "title": "UI/UX Designer",
+            "company": "Google",
+            "location": "California",
             "hashTags": [
-                "Engineeer",
-                "EngineeerStudents"
+                "Design",
+                "UserExperience",
+                "Creative"
             ],
-            "views": 200,
-            "timeLeft": "24 days",
-            "prizeMoney": 6000,
-            "participationMoney": 100,
-            "eligiblity": "all"
+            "views": 500,
+            "timeLeft": "10 days",
+            "prizeMoney": 8000,
+            "participationMoney": 50,
+            "eligibility": "Students only"
         },
         {
             "id": 3,
-            "title": "Java Backend Developer",
-            "company": "vmware",
-            "location": "mumbai",
+            "title": "Digital Marketing Specialist",
+            "company": "Amazon",
+            "location": "Seattle",
             "hashTags": [
-                "Engineeer",
-                "EngineeerStudents"
+                "Marketing",
+                "SocialMedia",
+                "Analytics"
             ],
-            "views": 200,
-            "timeLeft": "24 days",
-            "prizeMoney": 6000,
+            "views": 350,
+            "timeLeft": "5 days",
+            "prizeMoney": 4000,
+            "participationMoney": 75,
+            "eligibility": "Individuals and teams"
+        },
+        {
+            "id": 4,
+            "title": "Full Stack Web Developer",
+            "company": "Microsoft",
+            "location": "Redmond",
+            "hashTags": [
+                "WebDevelopment",
+                "JavaScript",
+                "CSS"
+            ],
+            "views": 1000,
+            "timeLeft": "15 days",
+            "prizeMoney": 10000,
+            "participationMoney": 150,
+            "eligibility": "Open to all"
+        },
+        {
+            "id": 5,
+            "title": "Content Writer",
+            "company": "HubSpot",
+            "location": "Boston",
+            "hashTags": [
+                "Writing",
+                "Blogging",
+                "SEO"
+            ],
+            "views": 250,
+            "timeLeft": "7 days",
+            "prizeMoney": 3000,
+            "participationMoney": 25,
+            "eligibility": "Individuals only"
+        },
+        {
+            "id": 6,
+            "title": "Data Analyst",
+            "company": "IBM",
+            "location": "New York",
+            "hashTags": [
+                "DataScience",
+                "Statistics",
+                "Visualization"
+            ],
+            "views": 800,
+            "timeLeft": "20 days",
+            "prizeMoney": 7000,
             "participationMoney": 100,
-            "eligiblity": "all"
+            "eligibility": "Open to all"
         }
     ]
 }

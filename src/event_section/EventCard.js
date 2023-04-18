@@ -8,7 +8,7 @@ import { AiFillTrophy } from "react-icons/ai";
 export default function EventCard({ event, onClick }) {
     const hashTags = event.hashTags.map((hashTag) => {
         return (
-            <Text mr="4" p="1" borderRadius="full" bg="black" color="white">#{hashTag}</Text>
+            <Text mr="4" p="1" color="black" fontWeight="bold">#{hashTag}</Text>
         )
     })
     return (

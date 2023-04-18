@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 //components
 import MultiImageCarousel from '../components/MultiItemCarousel';
 
@@ -14,6 +14,11 @@ import { FiEye, FiClock, } from "react-icons/fi";
 
 
 export default function EventDetails({ event }) {
+    const [wishlist, setWishlist] = useState(false)
+    function handleWishlistClick() {
+        setWishlist(prevValue => !prevValue)
+    }
+
     const data = [
         { id: 1, name: "Item 1" },
         { id: 2, name: "Item 2" },
@@ -48,6 +53,7 @@ export default function EventDetails({ event }) {
         )
     })
     return (
+        //remove hover effects from wish list button
         <Box padding="4" margin="3">
             <Flex>
                 <Box width="10%" marginRight="4">
@@ -73,14 +79,28 @@ export default function EventDetails({ event }) {
                     </Flex>
 
                     <Flex>
-                        <HStack mr="4" borderRadius="full" bg="black" color="white" px="4" py="2">
-                            <AiOutlineCalendar size="1.5rem" />
-                            <Text>Calender</Text>
-                        </HStack>
-                        <HStack mr="4" borderRadius="full" bg="black" color="white" px="4" py='2'>
-                            <AiOutlineHeart size="1.5rem" />
-                            <Text>Wishlist</Text>
-                        </HStack>
+                        <Box>
+                            <HStack mr="4" borderRadius="full" bg="black" color="white" px="4" py="2">
+                                <AiOutlineCalendar size="1.5rem" />
+                                <Text>Calender</Text>
+                            </HStack>
+                        </Box>
+                        <Box>
+                            <Button
+
+                                leftIcon={<AiOutlineHeart size="1.5rem" />}
+                                mr="4"
+                                borderRadius="full"
+                                cursor="pointer"
+                                bg={wishlist ? "red" : "black"}
+                                color="white"
+                                px="4"
+                                py='2'
+                                onClick={handleWishlistClick}
+                            >
+                                Wishlist
+                            </Button>
+                        </Box>
                     </Flex>
 
                     <Box display="flex" justifyContent="space-between" m="4" justify="space-between">
@@ -107,7 +127,7 @@ export default function EventDetails({ event }) {
                         </Flex>
                     </Box>
                 </Box>
-            </Flex>
+            </Flex >
             <Box>
                 <Box>
                     <Text marginBottom="0" fontWeight="bold" >Eligibility</Text>
@@ -196,6 +216,6 @@ export default function EventDetails({ event }) {
 
                 </Box>
             </Box>
-        </Box>
+        </Box >
     )
 }

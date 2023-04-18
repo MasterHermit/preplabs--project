@@ -3,9 +3,11 @@ import { FcNext, FcPrevious } from "react-icons/fc";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import CourseCard from './CourseCard';
 
-function MultiItemCarousel() {
+import { Box, Image } from "@chakra-ui/react";
+
+
+function MultiItemCarousel({ datas }) {
     const settings = {
         dots: false,
         infinite: true,
@@ -35,48 +37,29 @@ function MultiItemCarousel() {
             }
         ]
     };
+    const toBeRendered = datas.map((data) => {
+        return (
+            <Box as="div" key={data.id} objectFit="contain">
+                <Image
+                    mx="2"
+                    px="2"
+                    src={data.src}
+                    alt={data.alt}
+                    transition="all 0.2s ease-in-out"
+                    _hover={{
+                        transform: "scale(1.1)"
+                    }}
+                />
+            </Box>
+        )
+    })
 
     return (
-        <div className="multiItem__carousel__box">
-            <h2 className="multiItem__carousel__header">Courses</h2>
+        <Box w="80%">
             <Slider {...settings}>
-                <div >
-                    <CourseCard
-                        title="Master Python in 21 days with our mentors"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        url="https://placeimg.com/480/480/animals"
-                    />
-                </div>
-                <div >
-                    <CourseCard
-                        title="Master Python in 21 days with our mentors"
-                        description="Nullam feugiat nisi vitae enim venenatis aliquam."
-                        url="https://placeimg.com/480/480/nature"
-                    />
-                </div>
-                <div >
-                    <CourseCard
-                        title="Master Python in 21 days with our mentors"
-                        description="Vivamus imperdiet bibendum arcu, eu ultricies diam pellentesque quis."
-                        url="https://placeimg.com/480/480/people"
-                    />
-                </div>
-                <div>
-                    <CourseCard
-                        title="Master Python in 21 days with our mentors"
-                        description="Fusce at posuere tellus. Ut luctus justo sit amet tellus fermentum"
-                        url="https://placeimg.com/480/480/animals"
-                    />
-                </div>
-                <div >
-                    <CourseCard
-                        title="Master Python in 21 days with our mentors"
-                        description="Curabitur vestibulum neque sed enim dignissim, a tempor ex ultrices."
-                        url="https://placeimg.com/480/480/people"
-                    />
-                </div>
+                {toBeRendered}
             </Slider>
-        </div>
+        </Box>
     );
 }
 

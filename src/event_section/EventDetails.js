@@ -136,13 +136,20 @@ export default function EventDetails({ event }) {
                         </Flex>
                     </Box>
 
-                    <Box mt="6">
-                        <Text fontWeight="extrabold">What's at stake - Rewards and Prizes ?</Text>
-                        <Box borderWidth="2px" borderColor="black" display="flex" flexDirection="column" alignItems="center" >
+                    <Text fontWeight="extrabold">What's at stake - Rewards and Prizes ?</Text>
+                    <Box display="flex" justifyContent="center" mt="6">
+                        <Box
+                            borderWidth="2px"
+                            w="80%"
+                            borderColor="black"
+                            display="flex"
+                            flexDirection="column"
+                            justifyContent="center"
+                            alignItems="center" >
                             <Text>Winner</Text>
                             <Box>
                                 <HStack>
-                                    <Text>
+                                    <Text fontWeight="extrabold">
                                         INR 6000
                                     </Text>
                                     <AiFillTrophy size="8rem" color="gold" />

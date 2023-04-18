@@ -4,7 +4,39 @@ import { useState } from "react";
 const UserInterestChakra = () => {
     const [selectedInterests, setSelectedInterests] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const interests = ["React js", "Angular", "Vue", "Web Development", "machine Learning", "dancing", "ggfghf", "hvhgfghdvgvgh", "ytytvv", "jhvvhdvhj", "jhgsdhv"]
+    const interests = [
+        'Hiking',
+        'Photography',
+        'Cooking',
+        'Traveling',
+        'Reading',
+        'Gardening',
+        'Painting',
+        'Playing musical instruments',
+        'Writing',
+        'Yoga',
+        'Running',
+        'Cycling',
+        'Swimming',
+        'Birdwatching',
+        'Volunteering',
+        'Knitting',
+        'Drawing',
+        'Dancing',
+        'Singing',
+        'Board games',
+        'Video games',
+        'Photography',
+        'Watching movies',
+        'Listening to podcasts',
+        'Skiing',
+        'Photography',
+        'Camping',
+        'DIY crafts',
+        'Sculpting',
+        'Collecting stamps',
+    ];
+
     const handleInterestClick = (interest) => {
         if (selectedInterests.includes(interest)) {
             setSelectedInterests(selectedInterests.filter(item => item !== interest));
@@ -18,9 +50,9 @@ const UserInterestChakra = () => {
         setSelectedInterests([]);
     }
 
-    const filteredInterests = interests.filter((interest) => {
+    const filteredInterests = searchTerm.trim() !== "" ? interests.filter((interest) => {
         return interest.toLowerCase().includes(searchTerm.toLowerCase());
-    })
+    }) : interests;
 
     //interests buttons
     const toBeRenderedInterests = filteredInterests.map((interest) => {

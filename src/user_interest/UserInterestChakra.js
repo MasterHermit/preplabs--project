@@ -26,11 +26,9 @@ const UserInterestChakra = () => {
         'Singing',
         'Board games',
         'Video games',
-        'Photography',
         'Watching movies',
         'Listening to podcasts',
         'Skiing',
-        'Photography',
         'Camping',
         'DIY crafts',
         'Sculpting',
@@ -41,7 +39,7 @@ const UserInterestChakra = () => {
         if (selectedInterests.includes(interest)) {
             setSelectedInterests(selectedInterests.filter(item => item !== interest));
         } else {
-            setSelectedInterests([...selectedInterests, interest]);
+            setSelectedInterests([interest, ...selectedInterests]);
         }
     }
 
@@ -50,20 +48,19 @@ const UserInterestChakra = () => {
         setSelectedInterests([]);
     }
 
-    const filteredInterests = searchTerm.trim() !== "" ? interests.filter((interest) => {
+    const filteredInterests = interests.filter((interest) => {
         return interest.toLowerCase().includes(searchTerm.toLowerCase());
-    }) : interests;
+    })
 
     //interests buttons
     const toBeRenderedInterests = filteredInterests.map((interest) => {
         return (
             <Button
-                bg="gray"
                 m="4"
                 onClick={() => handleInterestClick(interest)}
                 key={interest}
                 style={{
-                    backgroundColor: selectedInterests.includes(interest) ? 'black' : '',
+                    backgroundColor: selectedInterests.includes(interest) ? 'black' : 'gray',
                     color: selectedInterests.includes(interest) ? "white" : "black"
                 }}
                 transition={"all ease-in-out 100ms"}

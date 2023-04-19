@@ -91,17 +91,33 @@ const UserInterestChakra = () => {
             </Button >
         )
     })
+    const css = {
+        "&::-webkit-scrollbar": {
+            width: "8px",
+            borderRadius: "8px",
+            backgroundColor: "white",
+            display: "none"
+        },
+        "&::-webkit-scrollbar-thumb": {
+            borderRadius: "8px",
+            backgroundColor: "black",
+        },
+    }
 
 
     return (
         <Box display="flex" justifyContent="center" alignItems="center" minW="100vw">
-            <Box w="90%"
+            <Box w={{ base: "100%", md: "90%" }}
                 p="6"
                 mx="auto">
                 <Text fontSize="3xl" fontWeight="extrabold">Choose Your Interests</Text>
                 <Text fontWeight="semibold">Pick up your favorite topics to set up your fields</Text>
-                <Box display="flex" alignItems="center">
-                    <Box w="30%" >
+                <Box
+                    mb="6"
+                    display="flex"
+                    flexDirection={{ base: "column", md: "row" }}
+                    alignItems="center">
+                    <Box w={{ base: "100%", md: "30%" }} >
                         <Input
                             placeholder="Search interests..."
                             w="100%"
@@ -110,17 +126,22 @@ const UserInterestChakra = () => {
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
                     </Box>
-                    <Box w="70%" display="flex" flexWrap="wrap" ml="4">
+                    <Box w={{ base: "auto", md: "70%" }} display="flex" flexWrap="wrap" ml="4">
                         {toBeRenderedSelectedInterests}
                     </Box>
                 </Box>
                 <Box
+
+                    css={css}
+                    maxHeight={{ base: "35vh", md: "100vh" }}
+                    overflowY="scroll"
                     ml={{ base: '0', md: "12" }}
                     display="flex"
-                    flexDirection={{ base: "column", md: "row" }}
-                    justifyContent="start"
                     flexWrap="wrap"
-
+                    borderWidth="1px"
+                    borderRadius="xl"
+                    borderColor="black"
+                    boxShadow="xl"
                 >
                     {toBeRenderedInterests}
                 </Box>

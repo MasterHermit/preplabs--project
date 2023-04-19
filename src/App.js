@@ -29,9 +29,10 @@ const images = [
 export default function App() {
     return (
         <div>
-            {/* <UserInterestChakra /> */}
+            <UserInterestChakra />
+            {/* <WorkExperienceForm /> */}
 
-            <Router>
+            {/* <Router>
                 <Routes>
                     <Route path="/events" element={<EventSection />} />
                     <Route path="/events/details" element={<MobileViewEventSection />} />
@@ -40,7 +41,7 @@ export default function App() {
                     <Route path="/jobs" element={<JobSection />} />
                     <Route path="/jobs/details" element={<MobileViewJobSection />} />
                 </Routes>
-            </Router>
+            </Router> */}
         </div>
     )
 }

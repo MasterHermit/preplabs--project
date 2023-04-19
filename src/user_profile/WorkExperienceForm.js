@@ -116,10 +116,13 @@ function WorkExperienceForm() {
                         <Text fontWeight="bold" mb="2">
                             Start Date
                         </Text>
-                        <Input type="date" placeholder=""
+                        <Input
+                            type="date"
+                            placeholder=""
                             name="startDate"
                             value={workExp.startDate}
                             onChange={handleOnChange}
+
                         />
                     </Box>
                     <Box flex="1 1 45%" mb={[4, 4, 0]}>

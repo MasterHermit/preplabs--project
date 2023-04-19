@@ -15,10 +15,12 @@ export default function EventCard({ event, onClick }) {
         <Box
             borderWidth="1px"
             borderRadius="lg"
+            borderColor="black"
             padding="2"
             margin="2"
             cursor="pointer"
             onClick={onClick}
+            boxShadow="xl"
         >
             <Flex>
                 <Box marginRight="4">
@@ -50,7 +52,6 @@ export default function EventCard({ event, onClick }) {
                             </Text>
                         </HStack>
                     </Flex>
-
                 </Box>
             </Flex>
         </Box>

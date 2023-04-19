@@ -63,7 +63,25 @@ const UserInterestChakra = () => {
                 onClick={() => handleInterestClick(interest)}
                 key={interest}
                 style={{
-                    backgroundColor: selectedInterests.includes(interest) ? 'skyBlue' : '',
+                    backgroundColor: selectedInterests.includes(interest) ? 'black' : '',
+                    color: selectedInterests.includes(interest) ? "white" : "black"
+                }}
+                transition={"all ease-in-out 100ms"}
+                _hover={{ backgroundColor: "black", transform: "scale(1.05)", color: "white !important" }}
+            >
+                {interest}
+            </Button >
+        )
+    })
+    const toBeRenderedSelectedInterests = selectedInterests.map((interest) => {
+        return (
+            <Button
+                bg="gray"
+                m="4"
+                onClick={() => handleInterestClick(interest)}
+                key={interest}
+                style={{
+                    backgroundColor: selectedInterests.includes(interest) ? 'black' : '',
                     color: selectedInterests.includes(interest) ? "white" : "black"
                 }}
                 transition={"all ease-in-out 100ms"}
@@ -82,12 +100,20 @@ const UserInterestChakra = () => {
                 mx="auto">
                 <Text fontSize="3xl" fontWeight="extrabold">Choose Your Interests</Text>
                 <Text fontWeight="semibold">Pick up your favorite topics to set up your fields</Text>
-                <Input
-                    placeholder="Search interests..."
-                    w={{ base: "90%", md: "30%" }}
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
+                <Box display="flex" alignItems="center">
+                    <Box w="30%" >
+                        <Input
+                            placeholder="Search interests..."
+                            w="100%"
+                            borderWidth='1px' borderRadius="xl" borderColor="black"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                    </Box>
+                    <Box w="70%" display="flex" flexWrap="wrap" ml="4">
+                        {toBeRenderedSelectedInterests}
+                    </Box>
+                </Box>
                 <Box
                     ml={{ base: '0', md: "12" }}
                     display="flex"
@@ -99,7 +125,8 @@ const UserInterestChakra = () => {
                     {toBeRenderedInterests}
                 </Box>
                 <Box mt="8" display="flex" justifyContent="center" alignItems="center">
-                    <Button bg="black" color="white" onClick={sendChoosenInterests}>Save</Button>
+                    <Button bg="black" color="white" mr="6" onClick={sendChoosenInterests}>Save</Button>
+                    <Button bg="black" color="white" >Skip</Button>
                 </Box>
             </Box>
         </Box>

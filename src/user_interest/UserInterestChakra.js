@@ -116,11 +116,12 @@ const UserInterestChakra = () => {
                     mb="6"
                     display="flex"
                     flexDirection={{ base: "column", md: "row" }}
-                    alignItems="center">
+                >
                     <Box w={{ base: "100%", md: "30%" }} >
                         <Input
                             placeholder="Search interests..."
                             w="100%"
+                            mt="4"
                             borderWidth='1px' borderRadius="xl" borderColor="black"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}

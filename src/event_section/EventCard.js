@@ -6,9 +6,9 @@ import { FiEye, FiClock, } from "react-icons/fi";
 import { AiFillTrophy } from "react-icons/ai";
 
 export default function EventCard({ event, onClick }) {
-    const hashTags = event.hashTags.map((hashTag) => {
+    const hashTags = event.hashTags.map((hashTag, index) => {
         return (
-            <Text mr="4" p="1" color="black" fontWeight="bold">#{hashTag}</Text>
+            <Text key={index} mr="4" p="1" color="black" fontWeight="bold">#{hashTag}</Text>
         )
     })
     return (

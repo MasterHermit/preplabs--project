@@ -24,15 +24,21 @@ const JobSection = () => {
                 const response = await fetch(" http://localhost:8000/jobs");
                 const data = await response.json();
                 setJobs(data);
-                setSelectedJob(data[0]);
+
+                //to display a default job in larger screen but in mobile
+                if (isLargerThanMobile) {
+                    setSelectedJob(data[0]);
+                } else {
+                    setSelectedJob(null);
+                }
             } catch (error) {
                 console.log(error);
             }
         };
 
         fetchData();
-
-    }, []);
+        //the dependency is to re render the screen if screen size changes from laptop to mobile
+    }, [isLargerThanMobile]);
 
 
     const handleScreenRender = (job) => {

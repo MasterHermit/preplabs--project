@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useMediaQuery, Box, Flex } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 //components
 import EventDetails from "./EventDetails"
@@ -10,7 +11,8 @@ export default function EventSection() {
 
     const [events, setEvents] = useState([]);
     const [selectedEvent, setSelectedEvent] = useState(null);
-
+    const [isLargerThanMobile] = useMediaQuery("(min-width: 600px)");
+    const navigate = useNavigate();
     useEffect(() => {
         // Fetch job data from an API 
 
@@ -20,25 +22,30 @@ export default function EventSection() {
                 const data = await response.json();
                 console.log(data);
                 setEvents(data);
-                setSelectedEvent(data[0]);
+                //this is for showing a  deafult event details in large screen but not in mobile
+                if (isLargerThanMobile) {
+                    setSelectedEvent(data[0]);
+                } else {
+                    setSelectedEvent(null)
+                }
             } catch (error) {
                 console.log(error);
             }
         };
 
         fetchData();
-
-    }, []);
+        //the dependency is to re render if screen size adjusted
+    }, [isLargerThanMobile]);
 
 
     const handleScreenRender = (event) => {
-        // if (isLargerThanMobile) {
-        handleJobCardClick(event);
-
-        //   else {
-        //       console.log(job);
-        //   navigate("/jobs/details", {state: {job} })
-        // }
+        if (isLargerThanMobile) {
+            handleJobCardClick(event);
+        }
+        else {
+            console.log(event);
+            navigate("/events/details", { state: { event } })
+        }
     }
 
     const handleJobCardClick = (event) => {

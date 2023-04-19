@@ -47,9 +47,9 @@ export default function EventDetails({ event }) {
         // ... add more data objects as needed
     ];
 
-    const hashTags = event.hashTags.map((hashTag) => {
+    const hashTags = event.hashTags.map((hashTag, index) => {
         return (
-            <Text mr="4" p="1" color="black" fontWeight="bold">#{hashTag}</Text>
+            <Text key={index} mr="4" p="1" color="black" fontWeight="bold">#{hashTag}</Text>
         )
     })
     return (

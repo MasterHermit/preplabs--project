@@ -74,31 +74,15 @@ export default function EventDetails({ event }) {
                         </HStack>
                     </Box>
 
-                    <Flex >
-                        {hashTags}
-                    </Flex>
-
                     <Flex>
                         <Box>
-                            <HStack mr="4" borderRadius="full" bg="black" color="white" px="4" py="2">
-                                <AiOutlineCalendar size="1.5rem" />
-                                <Text>Calender</Text>
-                            </HStack>
+                            <Button mr="4" bg="black" color="white" borderRadius="full">
+                                Register
+                            </Button>
                         </Box>
                         <Box>
-                            <Button
-
-                                leftIcon={<AiOutlineHeart size="1.5rem" />}
-                                mr="4"
-                                borderRadius="full"
-                                cursor="pointer"
-                                bg={wishlist ? "red" : "black"}
-                                color="white"
-                                px="4"
-                                py='2'
-                                onClick={handleWishlistClick}
-                            >
-                                Wishlist
+                            <Button bg="black" color="white" borderRadius="full">
+                                Save
                             </Button>
                         </Box>
                     </Flex>
@@ -113,17 +97,10 @@ export default function EventDetails({ event }) {
                                 <FiEye size="1.5rem" />
                                 <Text>200 views</Text>
                             </HStack>
-                        </Flex>
-                        <Flex alignItems="center">
-                            <Box>
-                                <HStack mr="4">
-                                    <BsCurrencyRupee size="1.5rem" />
-                                    <Text>100</Text>
-                                </HStack>
-                            </Box>
-                            <Box>
-                                <Button bg="black" color="white" borderRadius="full">Apply</Button>
-                            </Box>
+                            <HStack ml="4">
+                                <BsCurrencyRupee marginRight="0" size="1.5rem" />
+                                <Text marginLeft="0">100</Text>
+                            </HStack>
                         </Flex>
                     </Box>
                 </Box>

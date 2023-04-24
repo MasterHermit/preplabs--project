@@ -11,6 +11,7 @@ import UserInterestChakra from './user_interest/UserInterestChakra';
 import Home from './home/Home';
 import TextEditor from './text_editor/TextEditor';
 import SideBar from "./global_components/SideBar"
+import AdvanceSidebar from './global_components/AdvanceSideBar';
 import LargeLoader from './global_components/LargeLoader';
 import JobSection from './jobSection/JobSection';
 import MobileViewJobSection from './jobSection/MobileViewJobSection';
@@ -18,6 +19,7 @@ import CourseDetails from './course/CourseDetails';
 import EventSection from './event_section/EventSection';
 import MobileViewEventSection from './event_section/MobileViewEventSection';
 import ResumeUploader from './test/ResumeUploader';
+import FileUpload from './test/FileUpload';
 
 const images = [
     "https://plus.unsplash.com/premium_photo-1676977396527-96db41f59b22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
@@ -29,10 +31,14 @@ const images = [
 export default function App() {
     return (
         <div>
-            <UserInterestChakra />
+            {/* <UserInterestChakra /> */}
             {/* <WorkExperienceForm /> */}
+            {/* <SideBar /> */}
+            {/* <AdvanceSidebar /> */}
 
-            {/* <Router>
+            {/* <FileUpload /> */}
+
+            <Router>
                 <Routes>
                     <Route path="/events" element={<EventSection />} />
                     <Route path="/events/details" element={<MobileViewEventSection />} />
@@ -41,7 +47,7 @@ export default function App() {
                     <Route path="/jobs" element={<JobSection />} />
                     <Route path="/jobs/details" element={<MobileViewJobSection />} />
                 </Routes>
-            </Router> */}
+            </Router>
         </div>
     )
 }

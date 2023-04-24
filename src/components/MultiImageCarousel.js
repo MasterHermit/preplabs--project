@@ -32,7 +32,8 @@ function MultiImageCarousel({ datas }) {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    initialSlide: 1
+                    initialSlide: 1,
+                    infinite: true
                 }
             }
         ]
@@ -41,7 +42,7 @@ function MultiImageCarousel({ datas }) {
         return (
             <Box as="div" key={data.id} >
                 <Image
-                    mx="2"
+
                     px="2"
                     w="52rem"
                     h="30rem"

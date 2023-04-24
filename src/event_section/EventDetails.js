@@ -161,26 +161,7 @@ export default function EventDetails({ event }) {
 
                     <Text fontWeight="extrabold" mt="4">What's at stake - Rewards and Prizes ?</Text>
                     <Box display="flex" mt="6">
-                        <Box
-                            w={{ base: "90%", md: "40%" }}
-                            borderWidth="2px"
-                            borderColor="black"
-                            borderRadius="xl"
-                            display="flex"
-                            flexDirection="column"
-                            justifyContent="center"
-                            alignItems="center"
-                        >
-                            <Text fontWeight="bold" fontSize="xl">Winner</Text>
-                            <Box w={{ base: "90%", md: "80%" }} >
-                                <HStack display={"flex"} justifyContent={"space-between"}>
-                                    <Text fontSize="2xl" fontWeight="extrabold">
-                                        INR 6,000
-                                    </Text>
-                                    <AiFillTrophy size="8rem" color="gold" />
-                                </HStack>
-                            </Box>
-                        </Box>
+                        <Text fontWeight="semibold">Winner will get 6000 rupees</Text>
                     </Box>
 
                     <Box mt="4">

@@ -27,10 +27,8 @@ export default function TextEditor() {
 
     //image uploading logic and data
     const [images, setImages] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
 
     const handleImageUpload = async (event) => {
-        setIsLoading(true);
         const file = event.target.files[0];
         //Tasks to-do
         //bug fixed but need some testing
@@ -49,8 +47,9 @@ export default function TextEditor() {
                     duration: 3000,
                     isClosable: true,
                 });
+
             } finally {
-                setIsLoading(false);
+
             }
         } else {
             console.log('This is not an image file');
@@ -175,7 +174,7 @@ export default function TextEditor() {
                             datamaxsize="1024"
                             accept="image/*"
                             onChange={handleImageUpload}
-                            isDisabled={isLoading || images.length >= 2}
+                            isDisabled={images.length >= 2}
                             display="none"
                             id="image-input"
                         />
@@ -190,24 +189,20 @@ export default function TextEditor() {
                                 w="8rem"
                                 h="8rem"
                                 cursor="pointer"
-                                disabled={isLoading || images.length >= 2}
+                                disabled={images.length >= 2}
                                 _disabled={{
                                     opacity: 0.4,
                                     cursor: "not-allowed",
                                 }}
                             >
-                                {isLoading ? (
-                                    <CircularProgress size="28px" isIndeterminate color="teal" />
-                                ) : (
-                                    <Box
-                                        as="span"
-                                        color="black"
-                                        fontSize="sm"
-                                        border="black"
-                                    >
-                                        Upload Image
-                                    </Box>
-                                )}
+                                <Box
+                                    as="span"
+                                    color="black"
+                                    fontSize="sm"
+                                    border="black"
+                                >
+                                    Upload Image
+                                </Box>
                             </Button>
                         </label>
                         {images.length < 1 ? "" : images.map((image, index) => (
@@ -227,6 +222,8 @@ export default function TextEditor() {
                                 </Box>
                                 <Box>
                                     <Image
+                                        h="8rem"
+                                        w="15rem"
                                         src={URL.createObjectURL(image.file)}
                                         alt="Uploaded image"
                                         objectFit="cover"

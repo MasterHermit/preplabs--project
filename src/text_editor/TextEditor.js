@@ -209,24 +209,34 @@ export default function TextEditor() {
                             <Flex w={{ base: "35%", md: "15%" }}
                                 h={{ base: "35%", md: "15%" }}
                                 mb={{ base: "4" }}
+                                mr={{ base: "0", md: "4" }}
                                 key={index} position="relative" ml={2}>
                                 <Box>
                                     <CloseButton
-                                        size="md"
-                                        color="white"
+                                        size="lg"
+                                        fontWeight="bold"
+                                        borderWidth="2px"
+                                        borderColor="black"
+                                        borderRadius="50%"
+                                        color="black"
                                         position="absolute"
                                         top="-0.5rem"
                                         right="-0.5rem"
                                         onClick={() => handleImageDelete(index)}
                                     />
                                 </Box>
-                                <Box>
+                                <Box
+                                    h="8rem"
+                                    w="15rem"
+                                    boxShadow="md"
+
+                                >
                                     <Image
-                                        h="8rem"
-                                        w="15rem"
+                                        w="100%"
+                                        h="100%"
+                                        objectFit="cover"
                                         src={URL.createObjectURL(image.file)}
                                         alt="Uploaded image"
-                                        objectFit="cover"
                                     />
                                 </Box>
                             </Flex>

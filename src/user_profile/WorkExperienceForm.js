@@ -122,7 +122,6 @@ function WorkExperienceForm() {
                             name="startDate"
                             value={workExp.startDate}
                             onChange={handleOnChange}
-
                         />
                     </Box>
                     <Box flex="1 1 45%" mb={[4, 4, 0]}>

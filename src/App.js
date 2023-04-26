@@ -20,6 +20,7 @@ import EventSection from './event_section/EventSection';
 import MobileViewEventSection from './event_section/MobileViewEventSection';
 import ResumeUploader from './test/ResumeUploader';
 import FileUpload from './test/FileUpload';
+import TabsSection from './tab_section/TabsSection';
 
 const images = [
     "https://plus.unsplash.com/premium_photo-1676977396527-96db41f59b22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
@@ -35,9 +36,9 @@ export default function App() {
             {/* <WorkExperienceForm /> */}
             {/* <SideBar /> */}
             {/* <AdvanceSidebar /> */}
-
             {/* <FileUpload /> */}
-            <TextEditor />
+            {/* <TextEditor /> */}
+            <TabsSection />
 
             {/* <Router>
                 <Routes>

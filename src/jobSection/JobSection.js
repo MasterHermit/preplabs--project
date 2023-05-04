@@ -8,6 +8,7 @@ import JobCard from "./JobCard";
 import MobileViewJobSection from "./MobileViewJobSection";
 import JobDrawers from "./JobDrawers";
 import JobDropdowns from "./JobDropdowns";
+import { log } from "console";
 
 
 const JobSection = () => {
@@ -16,18 +17,19 @@ const JobSection = () => {
     const [isLargerThanMobile] = useMediaQuery("(min-width: 600px)");
     const navigate = useNavigate();
 
+
     useEffect(() => {
         // Fetch job data from an API 
 
         const fetchData = async () => {
             try {
-                const response = await fetch(" http://localhost:8000/jobs");
+                const response = await fetch(" https://assistance-hamburg-clothes-summary.trycloudflare.com/jobapplications/api/websites/job-applications/");
                 const data = await response.json();
-                setJobs(data);
+                setJobs(data.results);
 
                 //to display a default job in larger screen but in mobile
                 if (isLargerThanMobile) {
-                    setSelectedJob(data[0]);
+                    setSelectedJob(data.results[0]);
                 } else {
                     setSelectedJob(null);
                 }
@@ -95,6 +97,7 @@ const JobSection = () => {
                     <Flex flexDirection="column">
                         <Box marginTop="4">
                             {/* Render job cards here */}
+
                             {jobs.map((job) => (
                                 <JobCard key={job.id} job={job} onClick={() => handleScreenRender(job)} />
                             ))}

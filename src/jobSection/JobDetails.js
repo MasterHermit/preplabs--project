@@ -13,7 +13,7 @@ import { AiOutlineUnorderedList } from "react-icons/ai"
 
 
 const JobDetails = ({ job }) => {
-
+    let responsibility = job.responsibilities.split("\r\n")
     const [showAllSkills, setShowAllSkills] = useState(false);
     const toggleShowAll = () => {
         setShowAllSkills((prevShowAllSkills) => !prevShowAllSkills);
@@ -25,12 +25,12 @@ const JobDetails = ({ job }) => {
             <Text fontSize="xl" fontWeight="bold">
                 {job.title}
             </Text>
-            <Text >{job.company}</Text>
-            <Text >{job.location}  {job.type}</Text>
+            <Text >{job.organisation.title}</Text>
+            <Text >{job.location.city}  {job.job_type[0].title}</Text>
             <HStack m="2">
                 <FaSuitcase size="1.5rem" />
                 <Text m="4" fontWeight="medium">
-                    full-time associate
+                    {job.role}
                 </Text>
             </HStack>
             <HStack m="2">
@@ -42,7 +42,7 @@ const JobDetails = ({ job }) => {
             <HStack m="2">
                 <AiOutlineUnorderedList size="1.5rem" />
                 {displayedSkills.map((skill) => (
-                    <Text key={skill}>{skill}</Text>
+                    <Text key={skill.id}>{skill.title}</Text>
                 ))}
                 {hiddenSkillsCount > 0 && (
                     <Button variant="link" color="black !important" textDecoration="none" onClick={toggleShowAll}>
@@ -74,27 +74,20 @@ const JobDetails = ({ job }) => {
             <Text m="4" fontSize="l" fontWeight="bold">Job Brief</Text>
             <Text m="4" >We are currently hiring a Performance Marketing manager with a Successful track record to drive revenue, user acquisition and brand awarness huivhpiurebvibe onvrobewubvuo oivbeoibrvon oj ivrobje  ivneornoivn </Text>
             <Text m="4" fontSize="xl" fontWeight="bold">Main Responsibilities of a Performance Marketing Manager</Text>
-            <Text ml="4"  fontSize="l" fontWeight="bold">Your responsibilites will include:</Text>
+            <Text ml="4" fontSize="l" fontWeight="bold">Your responsibilites will include:</Text>
             <UnorderedList ml="10" >
-                <ListItem>Lorem ipsum dolor sit amet</ListItem>
-                <ListItem>Consectetur adipiscing elit</ListItem>
-                <ListItem>Integer molestie lorem at massa</ListItem>
-                <ListItem>Facilisis in pretium nisl aliquet</ListItem>
+                {responsibility.map((res, index) => (
+                    <ListItem key={index}>{res}</ListItem>
+                ))}
             </UnorderedList>
 
             {/* pass the company data props to the company card component */}
             <CompanyCard
-                logoSrc="https://images.unsplash.com/photo-1544216291-b1dc4f7c8735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvbXBhbnklMjBsb2dvc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                name="Acme Inc."
+                logoSrc={job.organisation.media}
+                name={job.organisation.title}
                 customerService="24/7 customer support"
                 numOfEmployees={1000}
-                about="Societe Generale is one of the leading European financial services groups. Based on a diversified and integrated banking model, the Group combines financial strength and proven expertise in innovation with a strategy of
-                sustainable growth, aiming to be the trusted partner for its clients, committed
-                to the positive transformations of society and the economy.
-                Societe Generale is one of the leading European financial services groups. Based on a diversified and integrated banking model, the Group combines financial strength and proven expertise in innovation with a strategy of
-                sustainable growth, aiming to be the trusted partner for its clients, committed
-                to the positive transformations of society and the economy.
-                "
+                about={job.organisation.description}
             />
 
         </Box>
